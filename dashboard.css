@@ -1,0 +1,15 @@
+.blocks {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+  width: 100%;
+}
+
+.dash-block {
+    background: white;
+    width: 45%;
+    height: 35%;
+    color: #555;
+    margin: 2.5%;
+    text-decoration: none;
+}
