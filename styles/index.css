@@ -1,0 +1,189 @@
+.header {
+  font-size: 65px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.mainBody {
+  width: 500px;
+  margin: auto;
+}
+
+.enter {
+  padding-top: 2%;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
+
+.creation {
+  align-items: center;
+  padding-top: 10%;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.button {
+  height: 44px;
+  border: none;
+  font-size: 12px;
+  align-items: center;
+}
+
+.buttonSignIn {
+	height: 44px;
+  border: none;
+  font-size: 12px;
+	align-items: center;
+  width: 100%;
+  margin: 2%;
+  background: rgb(255, 255, 255);
+  font-family: montserrat;
+  color: #333;
+  letter-spacing: 2px;
+  text-indent: 5%;
+  border-radius: 5px;
+}
+
+.buttonSubmit {
+	height: 44px;
+  border: none;
+  font-size: 12px;
+	align-items: center;
+  width: 50%;
+  height: 50px;
+  background: rgb(92, 92, 92);
+  font-family: montserrat;
+  font-weight: bold;
+  color: inherit;
+  letter-spacing: 1px;
+  border-radius: 5px;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+.buttonSubmit:hover {
+  background: #2f2f2f;
+}
+
+
+
+.registrationForm {
+	padding-top: 10%;
+	margin: 15%;
+	position: relative;
+}
+
+#signUpForm {
+	width: 65%;
+	margin: 5% auto;
+}
+
+#signUpForm fieldset {
+	background:rgb(255, 255, 255);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	position: relative;
+}
+
+#signUpForm fieldset:not(:first-of-type) {
+	display: none;
+}
+
+#signUpForm input{
+	padding: 15px;
+	border: 1px solid rgb(172, 172, 172);
+	border-radius: 5px;
+	margin: 1% auto;
+	width: 100%;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+#signUpForm .formButton {
+	width: 100px;
+	background: rgb(92, 92, 92);
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 1%;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+#signUpForm .formButton:hover {
+	background: #2f2f2f;
+}
+
+#signUpForm .formButtonSubmit {
+	width: 100px;
+	background: rgb(66, 201, 73);
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 1%;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+#signUpForm .formButtonSubmit:hover {
+	background: rgb(82, 223, 82);
+}
+
+.title {
+	font-size: 22px;
+	color: rgb(92, 92, 92);
+	padding-top: 0px;
+	margin-bottom: 10px;
+}
+.subtitle {
+	font-weight: 10px;
+	font-size: 15px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+#progressbar {
+  padding-left: 0px;
+  counter-reset: step;
+  align-self: center;
+	display: flex;
+}
+
+#progressbar li {
+	font-size: 8px;
+	color: rgb(141, 141, 141);
+	width: 33%;
+	position: relative;
+	list-style: none;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 30px;
+	line-height: 30px;
+	display: block;
+	font-size: 11px;
+	color: #333;
+	background: rgb(212, 212, 212);
+	border-radius: 100%;
+	margin: 5% auto;
+}
+
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: rgb(82, 223, 82);
+	color: white;
+}
