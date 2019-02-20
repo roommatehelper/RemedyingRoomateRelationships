@@ -1,3 +1,4 @@
+/* background */
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html {
   scroll-behavior: smooth;
@@ -55,22 +56,59 @@ body {
   display: inline;
 }
 
+/* header */
 header {
   width: 100%;
   height: 10%;
   background: white;
-  color: #555;
+  color: #333;
   display: flex;
   flex-flow: row wrap;
 	justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
+
 .title {
   width: 50%;
 }
 
 div.headernav {
-  width: 25%;
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 
+}
+
+.account {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* dashboard styles */
+.dashTileWrap {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+  width: 100%;
+}
+
+.dashTile {
+    background: white;
+    width: 48%;
+    height: 40%;
+    color: #666;
+    margin: 1%;
+    text-decoration: none;
+		border-radius: 5px;
+		box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
