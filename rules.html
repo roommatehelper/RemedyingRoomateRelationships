@@ -1,23 +1,105 @@
 <html>
+
 <head>
-<link rel="stylesheet" href="styles/dashboard.css">
-<link rel="stylesheet" href="styles/style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-   rel="stylesheet">
+  <link rel="stylesheet" href="styles/rules.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
   <header>
-    <div class = "headernav">
-    <a href="dashboard.html">
-      <p><i class="material-icons">arrow_back</i>Dashboard</p></a>
+    <div class="headernav">
+      <a href="dashboard.html">
+        <p>
+          <i class="material-icons">arrow_back</i>Dashboard</p>
+      </a>
     </div>
     <div class="title">
-    <h1> Rules </h1>
-  </div>
-  <div class = "headernav account">
-    <a href="#">My Account</a>
-    <a href="index.html">Log Out</a>
-  </div>
+      <h1> Rules </h1>
+    </div>
+    <div class="headernav account">
+      <a href="#">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
   </header>
+  <div class="choreForm">
+    <form id="choreInfo">
+      <fieldset action=#middle method="get">
+        <h2 class="signUpTitle">Summary</h2>
+        <div class="des">
+          <h1>DESCRIPTION</h1>
+          <h1>DATE FROM</h1>
+          <h1>DATE TO</h1>
+          <h1>CONSENSUS</h1>
+        </div>
+        <div class="info">
+          <div class="line">
+            <p>No people over the night before a midterm</p>
+            <p>01/29/2019</p>
+            <p>06/15/2019</p>
+            <p>Roommate_1, Roommate_2, Roommate_3</p>
+          </div>
+          <div class="line">
+            <p>Keep it quiet on the weedays</p>
+            <p>02/12/2019</p>
+            <p>06/15/2019</p>
+            <p>Yes</p>
+          </div>
+        </div>
+        <a href=#middle>
+          <input type="button" class="add" value="Add"/>
+        </a>
+      </fieldset>
+    </form>
+  </div>
+  <div class="registrationForm">
+    <form id="signUpForm">
+      <fieldset>
+        <ul id="progressbar">
+          <li class="active">Rule Description</li>
+          <li>Rule Schedule</li>
+          <li>Roommate Agreement</li>
+        </ul>
+        <h2 class="signUpTitle">A Brief Description</h2>
+        <input type="text" placeholder="DESCRIPTION" required pattern="[A-Za-z].*" />
+        <input type="submit" class="formButton" id="nextMiddle" value="Next" />
+      </fieldset>
+
+      <fieldset>
+        <ul id="progressbar">
+          <li class="active">Rule Description</li>
+          <li class="active">Rule Schedule</li>
+          <li>Roommate Agreement</li>
+        </ul>
+        <h2 class="signUpTitle">Dates</h2>
+        <input type="date" required pattern=".*" />
+        <input type="date" required pattern=".*" />
+        <input type="submit" class="formButton" id="previous" value="Previous" />
+        <input type="submit" class="formButton" id="next" value="Next" />
+      </fieldset>
+
+      <fieldset>
+        <ul id="progressbar">
+          <li class="active">Rule Description</li>
+          <li class="active">Rule Schedule</li>
+          <li class="active">Roommate Agreement</li>
+        </ul>
+        <h2 class="signUpTitle">Who Agrees?</h2>
+        <input type="search" placeholder="SEARCH ROOMMATES NAME" />
+        <div class="createNewRoom">
+          <div class="checkHolder">
+            <input type="checkbox" class="box-1">
+          </div>
+          <h3 class="subtitle">Consensus?</h3>
+        </div>
+        <input type="submit" class="formButton" id="previousLast" value="Previous" />
+        <input type="submit" class="formButtonSubmit" value="Submit" onclick="changeWindowRules()" />
+      </fieldset>
+    </form>
+    <div id="middle"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="formMovement.js"></script>
 </body>
+
 </html>

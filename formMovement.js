@@ -45,3 +45,11 @@ function changeWindow() {
 function changeWindowRules() {
     window.location = "rules.html";
 }
+function checkPassword(p1, p2) {
+    var secondPassword = document.getElementById("p2");
+    if (p1.value != p2.value) {
+        secondPassword.setCustomValidity('Passwords do not match');
+    } else {
+        secondPassword.setCustomValidity('');
+    }
+}

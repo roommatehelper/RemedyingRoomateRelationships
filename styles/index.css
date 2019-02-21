@@ -1,8 +1,9 @@
 .header {
-  padding: 30px;
   font-size: 65px;
   text-transform: uppercase;
-  letter-spacing: 5px;
+	letter-spacing: 5px;
+	margin-top: 10%;
+	height: 8%;
 }
 
 .mainBody {
@@ -71,8 +72,6 @@
   background: #2f2f2f;
 }
 
-
-
 .registrationForm {
 	padding-top: 10%;
 	margin: 15%;
@@ -107,8 +106,17 @@
 	margin: 2% auto;
 	width: 100%;
 	font-family: montserrat;
+	letter-spacing: 1.5px;
 	color: #2C3E50;
-	font-size: 13px;
+	font-size: 12px;
+}
+
+#signUpForm input:invalid {
+  border: 1px dashed rgb(172, 172, 172);
+}
+
+#signUpForm input:valid {
+	border: 1px solid rgb(172, 172, 172);
 }
 
 #signUpForm .formButton {
@@ -129,10 +137,10 @@
 
 #signUpForm .formButtonSubmit {
 	width: 100px;
+	border: 10px;
 	background: rgb(66, 201, 73);
 	font-weight: bold;
 	color: white;
-	border: none;
 	border-radius: 5px;
 	margin: 1%;
 	transition: background .4s ease-in-out;
@@ -154,6 +162,7 @@
 	font-size: 15px;
 	color: #666;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 #progressbar {
@@ -164,7 +173,7 @@
 }
 
 #progressbar li {
-	font-size: 8px;
+	font-size: 10px;
 	color: rgb(141, 141, 141);
 	width: 33%;
 	position: relative;
@@ -187,4 +196,24 @@
 #progressbar li.active:before,  #progressbar li.active:after{
 	background: rgb(82, 223, 82);
 	color: white;
+}
+
+.createNewRoom {
+	display: flex;
+	align-items: center;
+	margin: 2%;
+	margin-bottom: 3%;
+}
+
+.checkHolder {
+	width: 5%;
+	margin-left: 25%;
+	margin-right: 3%;
+	margin-top: 1%;
+}
+
+input[type=checkbox]
+{
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  padding: 10px;
 }

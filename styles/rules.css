@@ -1,0 +1,236 @@
+.registrationForm {
+	padding-top: 10%;
+	margin: 15%;
+	position: relative;
+}
+
+.des {
+    align-content: center;
+    display: inline-flex;
+    padding-left: 0%;
+    margin-left: 5%;
+    margin-right: 7%;
+    align-items: center;
+}
+.line {
+    display: inline-flex;
+    width: 100%;
+    margin: -1px;
+    border-style: solid;
+    border-color: rgb(173, 173, 173);
+    border-width: 2px 0px 2px 0px;
+}
+
+.info {
+    display: block;
+}
+
+.choreForm {
+	padding-top: 1%;
+	margin: 5%;
+	position: relative;
+}
+
+#choreInfo {
+    width: 80%;
+    margin: auto;
+}
+
+#choreInfo fieldset {
+    background:rgb(255, 255, 255);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+    width: 100%;
+    display: flex;
+}
+
+#choreInfo h1 {
+    display: flex;
+    padding: 15px;
+	border-radius: 5px;
+	font-family: montserrat;
+	letter-spacing: 1.5px;
+	color: #2C3E50;
+    font-size: 12px;
+    width: 100%;
+    padding-left: 8%;
+}
+#choreInfo p {
+    padding: 15px;
+	border: 1px solid rgb(172, 172, 172);
+	border-radius: 5px;
+	font-family: montserrat;
+	letter-spacing: 1.5px;
+	color: #2C3E50;
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#choreInfo .add {
+    padding: 15px;
+	font-family: montserrat;
+	letter-spacing: 1.5px;
+	font-size: 12px;
+	width: 100px;
+	background: rgb(92, 92, 92);
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 5px;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 2%;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+#choreInfo .add:hover {
+    background: #2f2f2f;
+}
+
+#signUpForm {
+	width: 65%;
+	margin: 5% auto;
+}
+
+#signUpForm fieldset {
+	background:rgb(255, 255, 255);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	position: relative;
+}
+
+#signUpForm fieldset:not(:first-of-type) {
+	display: none;
+}
+
+#signUpForm input{
+	padding: 15px;
+	border: 1px solid rgb(172, 172, 172);
+	border-radius: 5px;
+	margin: 2% auto;
+	width: 100%;
+	font-family: montserrat;
+	letter-spacing: 1.5px;
+	color: #2C3E50;
+	font-size: 12px;
+}
+
+#signUpForm input:invalid {
+  border: 1px dashed rgb(172, 172, 172);
+}
+
+#signUpForm input:valid {
+	border: 1px solid rgb(172, 172, 172);
+}
+
+#signUpForm .formButton {
+	width: 100px;
+	background: rgb(92, 92, 92);
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 1%;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+#signUpForm .formButton:hover {
+	background: #2f2f2f;
+}
+
+#signUpForm .formButtonSubmit {
+	width: 100px;
+	border: 10px;
+	background: rgb(66, 201, 73);
+	font-weight: bold;
+	color: white;
+	border-radius: 5px;
+	margin: 1%;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+#signUpForm .formButtonSubmit:hover {
+	background: rgb(82, 223, 82);
+}
+
+.signUpTitle {
+	font-size: 22px;
+	color: rgb(92, 92, 92);
+	padding-top: 0px;
+	margin-bottom: 10px;
+}
+.subtitle {
+	font-weight: 10px;
+	font-size: 15px;
+	color: #666;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#progressbar {
+  padding-left: 0px;
+  counter-reset: step;
+  align-self: center;
+	display: flex;
+}
+
+#progressbar li {
+	font-size: 10px;
+	color: rgb(141, 141, 141);
+	width: 33%;
+	position: relative;
+	list-style: none;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 30px;
+	line-height: 30px;
+	display: block;
+	font-size: 11px;
+	color: #333;
+	background: rgb(212, 212, 212);
+	border-radius: 100%;
+	margin: 5% auto;
+}
+
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: rgb(82, 223, 82);
+	color: white;
+}
+
+.createNewRoom {
+	display: flex;
+	align-items: center;
+	margin: 2%;
+	margin-bottom: 3%;
+}
+
+.checkHolder {
+	width: 5%;
+	margin-left: 35%;
+	margin-right: 3%;
+	margin-top: 1%;
+}
+
+input[type=checkbox]
+{
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  padding: 10px;
+}
+
