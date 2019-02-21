@@ -1,5 +1,11 @@
 $(document).ready(function () {
     var current, next, prev;
+    $("#begin").click(function () {
+        current = $(this).parent();
+        next = $(this).parent().next();
+        next.show();
+        current.hide();
+    });
 
     $("#next").click(function () {
         current = $(this).parent();
@@ -35,4 +41,7 @@ $(document).ready(function () {
 });
 function changeWindow() {
     window.location="dashboard.html";
+}
+function changeWindowRules() {
+    window.location = "rules.html";
 }
