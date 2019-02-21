@@ -39,12 +39,39 @@ $(document).ready(function () {
         return false;
     })
 });
+
 function changeWindow() {
     window.location="dashboard.html";
 }
 function changeWindowRules() {
-    window.location = "rules.html";
+
+    var line = document.createElement("div");
+    line.className += "line";
+    var rule = document.createElement("button");
+    rule.className += "ruleTitle";
+    rule.type = "button";
+    line.appendChild(rule);
+    var desc = document.createElement("div");
+    desc.className += "ruleDescription";
+    line.appendChild(desc);
+
+    var elements = document.getElementById("newRuleForm").elements;
+    var obj ={};
+    for(var i = 0 ; i < elements.length ; i++){
+        var item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+
+    var node = obj["description"];
+
+    rule.innerHTML += node;
+
+    var list = document.getElementsByClassName("rules");
+    list[0].appendChild(line);
+
+    window.location.hash = "#";
 }
+
 function checkPassword(p1, p2) {
     var secondPassword = document.getElementById("p2");
     if (p1.value != p2.value) {
@@ -52,4 +79,20 @@ function checkPassword(p1, p2) {
     } else {
         secondPassword.setCustomValidity('');
     }
+}
+
+
+var coll = document.getElementsByClassName("ruleTitle");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }

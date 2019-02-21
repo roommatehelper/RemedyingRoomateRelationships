@@ -22,28 +22,26 @@
       <a href="index.html">Log Out</a>
     </div>
   </header>
-  <div class="choreForm">
-    <form id="choreInfo">
+
+  <div class="rulesForm">
+    <form id="rulesInfo">
       <fieldset action=#middle method="get">
-        <h2 class="signUpTitle">Summary</h2>
-        <div class="des">
-          <h1>DESCRIPTION</h1>
-          <h1>DATE FROM</h1>
-          <h1>DATE TO</h1>
-          <h1>CONSENSUS</h1>
-        </div>
-        <div class="info">
+        <div class="rules">
           <div class="line">
-            <p>No people over the night before a midterm</p>
-            <p>01/29/2019</p>
-            <p>06/15/2019</p>
-            <p>Roommate_1, Roommate_2, Roommate_3</p>
+            <button class= "ruleTitle" type="button">No people over the night before a midterm</button>
+              <div class="ruleDescription">
+                <p>01/29/2019</p>
+                <p>06/15/2019</p>
+                <p>Roommate_1, Roommate_2, Roommate_3</p>
+              </div>
           </div>
           <div class="line">
-            <p>Keep it quiet on the weedays</p>
+            <button class= "ruleTitle" type="button">Keep it quiet on the weekdays</button>
+            <div class="ruleDescription">
             <p>02/12/2019</p>
             <p>06/15/2019</p>
             <p>Yes</p>
+          </div>
           </div>
         </div>
         <a href=#middle>
@@ -53,7 +51,7 @@
     </form>
   </div>
   <div class="registrationForm">
-    <form id="signUpForm">
+    <form id="newRuleForm">
       <fieldset>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
@@ -61,8 +59,8 @@
           <li>Roommate Agreement</li>
         </ul>
         <h2 class="signUpTitle">A Brief Description</h2>
-        <input type="text" placeholder="DESCRIPTION" required pattern="[A-Za-z].*" />
-        <input type="submit" class="formButton" id="nextMiddle" value="Next" />
+        <input type="text" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
+        <input type="button" class="formButton" id="nextMiddle" value="Next" />
       </fieldset>
 
       <fieldset>
@@ -74,8 +72,8 @@
         <h2 class="signUpTitle">Dates</h2>
         <input type="date" required pattern=".*" />
         <input type="date" required pattern=".*" />
-        <input type="submit" class="formButton" id="previous" value="Previous" />
-        <input type="submit" class="formButton" id="next" value="Next" />
+        <input type="button" class="formButton" id="previous" value="Previous" />
+        <input type="button" class="formButton" id="next" value="Next" />
       </fieldset>
 
       <fieldset>
@@ -92,7 +90,7 @@
           </div>
           <h3 class="subtitle">Consensus?</h3>
         </div>
-        <input type="submit" class="formButton" id="previousLast" value="Previous" />
+        <input type="button" class="formButton" id="previousLast" value="Previous" />
         <input type="submit" class="formButtonSubmit" value="Submit" onclick="changeWindowRules()" />
       </fieldset>
     </form>
