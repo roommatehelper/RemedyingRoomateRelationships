@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="styles/dashboard.css">
+<link rel="stylesheet" href="styles/chores.css">
 <link rel="stylesheet" href="styles/style.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
    rel="stylesheet">
@@ -19,5 +19,53 @@
     <a href="index.html">Log Out</a>
   </div>
   </header>
+  <div class="registrationForm">
+    <form id="signUpForm">
+      <fieldset>
+        <ul id="progressbar">
+          <li class="active">PERSONAL DETAILS</li>
+          <li>ACCOUNT DETAILS</li>
+          <li>ROOM DETAILS</li>
+        </ul>
+        <h2 class="signUpTitle">Your Personal Details</h2>
+        <input type="text" placeholder="FIRST NAME" />
+        <input type="text" placeholder="LAST NAME" />
+        <input type="text" placeholder="PHONE NUMBER" />
+        <input type="button" class="formButton" id="nextMiddle" value="Next" />
+      </fieldset>
+
+      <fieldset>
+        <ul id="progressbar">
+          <li class="active">PERSONAL DETAILS</li>
+          <li class="active">ACCOUNT DETAILS</li>
+          <li>ROOM DETAILS</li>
+        </ul>
+        <h2 class="signUpTitle">Your account</h2>
+        <h3 class="subtitle">Only for your eyes</h3>
+        <input type="text" name="email" placeholder="NAME@GMAIL.COM" />
+        <input type="password" placeholder="PASSWORD" />
+        <input type="password" placeholder="CONFIRM PASSWORD" />
+        <input type="button" class="formButton" id="previous" value="Previous" />
+        <input type="button" class="formButton" id="next" value="Next" />
+      </fieldset>
+
+      <fieldset>
+        <ul id="progressbar">
+          <li class="active">PERSONAL DETAILS</li>
+          <li class="active">ACCOUNT DETAILS</li>
+          <li class="active">ROOM DETAILS</li>
+        </ul>
+        <h2 class="signUpTitle">Your Room Details</h2>
+        <h3 class="subtitle">Looking to join a room?</h3>
+        <input type="text" placeholder="ROOM NAME" />
+        <input type="text" placeholder="ROOM CODE" />
+        <input type="button" class="formButton" id="previousLast" value="Previous" />
+        <input type="submit" class="formButtonSubmit" id="submission" value="Submit" onclick="changeWindow()"/>
+      </fieldset>
+    </form>
+    <div id="middle"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="formMovement.js"></script>
 </body>
 </html>
