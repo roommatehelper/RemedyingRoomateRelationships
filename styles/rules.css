@@ -13,7 +13,6 @@
     align-items: center;
 }
 .line {
-    display: inline-flex;
     width: 100%;
     margin: -1px;
     border-style: solid;
@@ -21,22 +20,55 @@
     border-width: 2px 0px 2px 0px;
 }
 
-.info {
+.rules {
     display: block;
 }
 
-.choreForm {
+.ruleTitle {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  outline: none;
+	color: #666;
+	padding: 20px;
+	text-align: left;
+	font-family: Montserrat, sans-serif;
+	font-size: 14pt;
+}
+
+button.active, .ruleTitle:hover {
+  background-color: #f1f1f1;
+}
+
+.ruleDescription{
+	display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+button.ruleTitle:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  float: right;
+  margin-left: 5px;
+}
+
+button.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.rulesForm {
 	padding-top: 1%;
 	margin: 5%;
 	position: relative;
 }
 
-#choreInfo {
+#rulesInfo {
     width: 80%;
     margin: auto;
 }
 
-#choreInfo fieldset {
+#rulesInfo fieldset {
     background:rgb(255, 255, 255);
 	border: none;
 	border-radius: 10px;
@@ -47,32 +79,21 @@
     display: flex;
 }
 
-#choreInfo h1 {
-    display: flex;
-    padding: 15px;
-	border-radius: 5px;
-	font-family: montserrat;
-	letter-spacing: 1.5px;
-	color: #2C3E50;
-    font-size: 12px;
-    width: 100%;
-    padding-left: 8%;
-}
-#choreInfo p {
-    padding: 15px;
+#rulesInfo p {
+  padding: 15px;
 	border: 1px solid rgb(172, 172, 172);
 	border-radius: 5px;
 	font-family: montserrat;
 	letter-spacing: 1.5px;
 	color: #2C3E50;
-    font-size: 12px;
-    width: 100%;
-    text-align: left;
-    margin-left: 2%;
+  font-size: 12px;
+  width: inherit;
+  text-align: left;
+  margin-left: 2%;
     margin-right: 2%;
 }
 
-#choreInfo .add {
+#rulesInfo .add {
     padding: 15px;
 	font-family: montserrat;
 	letter-spacing: 1.5px;
@@ -90,16 +111,16 @@
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
 
-#choreInfo .add:hover {
+#rulesInfo .add:hover {
     background: #2f2f2f;
 }
 
-#signUpForm {
+#newRuleForm {
 	width: 65%;
 	margin: 5% auto;
 }
 
-#signUpForm fieldset {
+#newRuleForm fieldset {
 	background:rgb(255, 255, 255);
 	border: none;
 	border-radius: 10px;
@@ -111,11 +132,11 @@
 	position: relative;
 }
 
-#signUpForm fieldset:not(:first-of-type) {
+#newRuleForm fieldset:not(:first-of-type) {
 	display: none;
 }
 
-#signUpForm input{
+#newRuleForm input{
 	padding: 15px;
 	border: 1px solid rgb(172, 172, 172);
 	border-radius: 5px;
@@ -127,15 +148,15 @@
 	font-size: 12px;
 }
 
-#signUpForm input:invalid {
+#newRuleForm input:invalid {
   border: 1px dashed rgb(172, 172, 172);
 }
 
-#signUpForm input:valid {
+#newRuleForm input:valid {
 	border: 1px solid rgb(172, 172, 172);
 }
 
-#signUpForm .formButton {
+#newRuleForm .formButton {
 	width: 100px;
 	background: rgb(92, 92, 92);
 	font-weight: bold;
@@ -147,11 +168,11 @@
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
 
-#signUpForm .formButton:hover {
+#newRuleForm .formButton:hover {
 	background: #2f2f2f;
 }
 
-#signUpForm .formButtonSubmit {
+#newRuleForm .formButtonSubmit {
 	width: 100px;
 	border: 10px;
 	background: rgb(66, 201, 73);
@@ -163,7 +184,7 @@
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
 
-#signUpForm .formButtonSubmit:hover {
+#newRuleForm .formButtonSubmit:hover {
 	background: rgb(82, 223, 82);
 }
 
@@ -233,4 +254,3 @@ input[type=checkbox]
   -webkit-transform: scale(2); /* Safari and Chrome */
   padding: 10px;
 }
-
