@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var current, next, prev;
-    
+
     $("#next").click(function () {
         current = $(this).parent();
         next = $(this).parent().next();

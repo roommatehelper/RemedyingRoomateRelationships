@@ -14,9 +14,40 @@
     <div class="title">
     <h1> My Group </h1>
   </div>
-  <div class = "headernav">
-    <p>My Account</p>
+  <div class = "headernav account">
+    <a href="#">My Account</a>
+    <a href="index.html">Log Out</a>
   </div>
   </header>
 </body>
 </html>
+
+
+
+.myAccount {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.myAccount-dropdown {
+  display: none;
+  background-color: #ccc;
+  padding-top: 20px;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.myAccount-dropdown a {
+  display: block;
+  padding: 20px;
+}
+
+.myAccount:hover {
+  background-color: #ccc;
+}
+
+.myAccount:hover .myAccount-dropdown {
+  display: block;
+}
