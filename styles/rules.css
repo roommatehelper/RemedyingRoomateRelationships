@@ -57,7 +57,7 @@ button.active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-.rulesForm {
+.rulesList {
 	padding-top: 1%;
 	margin: 5%;
 	position: relative;
@@ -79,18 +79,23 @@ button.active:after {
     display: flex;
 }
 
-#rulesInfo p {
-  padding: 15px;
-	border: 1px solid rgb(172, 172, 172);
-	border-radius: 5px;
+.checkitem p , #rulesInfo p{
 	font-family: montserrat;
 	letter-spacing: 1.5px;
 	color: #2C3E50;
   font-size: 12px;
   width: inherit;
   text-align: left;
+	display: inline;
+}
+
+#rulesInfo p {
+  padding: 15px;
+	border: 1px solid rgb(172, 172, 172);
+	border-radius: 5px;
   margin-left: 2%;
-    margin-right: 2%;
+  margin-right: 2%;
+	display: block;
 }
 
 #rulesInfo .add {
@@ -146,6 +151,20 @@ button.active:after {
 	letter-spacing: 1.5px;
 	color: #2C3E50;
 	font-size: 12px;
+}
+#newRuleForm input[type=checkbox]{
+	width: auto;
+	margin: 3%;
+	float: left;
+}
+
+.checkitem {
+	width: 80%;
+	margin: 5% auto;
+	text-align: left;
+}
+.checkitem p{
+	padding-left: 10px;
 }
 
 #newRuleForm input:invalid {
@@ -247,6 +266,10 @@ button.active:after {
 	margin-left: 35%;
 	margin-right: 3%;
 	margin-top: 1%;
+}
+
+.roommateList {
+	width: 100%;
 }
 
 input[type=checkbox]
