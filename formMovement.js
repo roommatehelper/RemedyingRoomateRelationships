@@ -36,7 +36,7 @@ $(document).ready(function () {
     });
 
     $("#submission").click(function () {
-        return false;
+      return false;
     })
 });
 
@@ -44,6 +44,8 @@ function changeWindow() {
     window.location="dashboard.html";
 }
 function changeWindowRules() {
+
+    window.location.hash = "#";
 
     var line = document.createElement("div");
     line.className += "line";
@@ -69,7 +71,10 @@ function changeWindowRules() {
     var list = document.getElementsByClassName("rules");
     list[0].appendChild(line);
 
-    window.location.hash = "#";
+    var start = document.getElementById("start");
+    start.style.display = "block";
+    var end = document.getElementById("end");
+    end.style.display = "none";
 }
 
 function checkPassword(p1, p2) {

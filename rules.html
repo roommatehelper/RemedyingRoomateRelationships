@@ -52,7 +52,7 @@
   </div>
   <div class="registrationForm">
     <form id="newRuleForm">
-      <fieldset>
+      <fieldset id= "start">
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li>Rule Schedule</li>
@@ -76,7 +76,7 @@
         <input type="button" class="formButton" id="next" value="Next" />
       </fieldset>
 
-      <fieldset>
+      <fieldset id="end">
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li class="active">Rule Schedule</li>
@@ -91,7 +91,7 @@
           <h3 class="subtitle">Consensus?</h3>
         </div>
         <input type="button" class="formButton" id="previousLast" value="Previous" />
-        <input type="submit" class="formButtonSubmit" value="Submit" onclick="changeWindowRules()" />
+        <input type="button" class="formButtonSubmit" value="Submit" onclick="changeWindowRules()"/>
       </fieldset>
     </form>
     <div id="middle"></div>
