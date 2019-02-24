@@ -56,10 +56,10 @@
         <h2 class="formTitle">Your account</h2>
         <h3 class="subtitle">For your eyes only</h3>
         <input type="email" name="email" id="mail" placeholder="NAME@GMAIL.COM" required pattern = "[A-Za-z0-9].*[@].*" />
-        <input type="password" id = "p1" placeholder="PASSWORD" required pattern = ".*"/>
-        <input type="password" placeholder="CONFIRM PASSWORD" required pattern = ".*" />
+        <input type="password" id= "p1" placeholder="PASSWORD" required pattern = ".*"/>
+        <input type="password" id="p2" placeholder="CONFIRM PASSWORD" required pattern = ".*"/>
         <input type="button" class="formButton previous" value="Previous" />
-        <input type="button" class="formButton forward" value="Next" />
+        <input type="button" class="formButton forward" value="Next" onclick="checkPassword()"/>
       </fieldset>
 
       <fieldset>
@@ -79,7 +79,7 @@
           <h3 class="subtitle">Want to create a room?</h3>
         </div>
         <input type="button" class="formButton previous" value="Previous" />
-        <input type="button" class="formButton submit" id = "submission" value="Submit" onclick="changeWindow()"/>
+        <input type="button" class="formButton submit" value="Submit" onclick="changeWindow()"/>
       </fieldset>
     </form>
     <div id="middle"></div>

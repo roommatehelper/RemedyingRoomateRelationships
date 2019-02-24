@@ -255,6 +255,10 @@ input.error::placeholder {
   font-style: italic;
 }
 
+#errormsg {
+  color: red;
+}
+
 #progressbar {
   padding-left: 0px;
   counter-reset: step;
