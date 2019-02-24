@@ -8,23 +8,18 @@
 </head>
 
 <body>
-  <p class="header">The Room</p>
-  <div class="mainBody">
+  <p class="indexHeader">The Room</p>
+  <div class="index">
     <p class="description">Already have an account?</p>
-    <div class="input">
-      <input type="text" class="buttonSignIn" placeholder="NAME@GMAIL.COM">
-    </div>
-    <div class="input">
-      <input type="password" class="buttonSignIn" placeholder="PASSWORD">
-    </div>
-    <div class = "enter">
-      <input type="submit" class="buttonSubmit" value="SIGN IN" onclick="changeWindow()">
-    </div>
+    <input type="email" class="signInInput" placeholder="NAME@GMAIL.COM" required pattern = "[A-Za-z0-9].*[@].*" />
+    <input type="password" class="signInInput" placeholder="PASSWORD" required pattern = ".*"/>
+    <input type="submit" class="formButton large" value="SIGN IN" onclick="signIn()">
+
     <div class="creation">
       <p class="description">Want to create an account?</p>
-      <form action=#middle method="get">
-        <input type="submit" class="buttonSubmit" value="SIGN UP">
-      </form>
+      <a href="#middle">
+        <input type="submit" class="formButton large" value="SIGN UP">
+      </a>
     </div>
   </div>
 
@@ -36,8 +31,8 @@
           <li>ACCOUNT DETAILS</li>
           <li>ROOM DETAILS</li>
         </ul>
-        <h2 class="signUpTitle">Let's Begin!</h2>
-        <input type="submit" class="formButton" id="begin" value="Next" />
+        <h2 class="formTitle">Let's Begin!</h2>
+        <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
       <fieldset>
@@ -46,11 +41,11 @@
           <li>ACCOUNT DETAILS</li>
           <li>ROOM DETAILS</li>
         </ul>
-        <h2 class="signUpTitle">Your Personal Details</h2>
+        <h2 class="formTitle">Your Personal Details</h2>
         <input type="text" placeholder="FIRST NAME" required pattern = "[A-Za-z].*"/>
         <input type="text" placeholder="LAST NAME" required pattern = "[A-Za-z].*"/>
         <input type="tel" placeholder="PHONE NUMBER" required pattern = "[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}|[0-9]{10}|1-[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}"/>
-        <input type="button" class="formButton" id="nextMiddle" value="Next" />
+        <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
       <fieldset>
@@ -59,13 +54,13 @@
           <li class="active">ACCOUNT DETAILS</li>
           <li>ROOM DETAILS</li>
         </ul>
-        <h2 class="signUpTitle">Your account</h2>
+        <h2 class="formTitle">Your account</h2>
         <h3 class="subtitle">For your eyes only</h3>
-        <input type="email" name="email" id="mail" placeholder="NAME@GMAIL.COM" required pattern = "[A-Za-z].*[@].*" />
+        <input type="email" name="email" id="mail" placeholder="NAME@GMAIL.COM" required pattern = "[A-Za-z0-9].*[@].*" />
         <input type="password" id = "p1" placeholder="PASSWORD" required pattern = ".*"/>
         <input type="password" placeholder="CONFIRM PASSWORD" required pattern = ".*" />
-        <input type="button" class="formButton" id="previous" value="Previous" />
-        <input type="button" class="formButton" id="next" value="Next" />
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
       <fieldset>
@@ -74,18 +69,18 @@
           <li class="active">ACCOUNT DETAILS</li>
           <li class="active">ROOM DETAILS</li>
         </ul>
-        <h2 class="signUpTitle">Your Room Details</h2>
+        <h2 class="formTitle">Your Room Details</h2>
         <h3 class="subtitle">Looking to join a room?</h3>
         <input type="text" placeholder="ROOM NAME" />
         <input type="text" placeholder="ROOM CODE" />
         <div class = "createNewRoom">
           <div class = "checkHolder">
-            <input type="checkbox" class = "box-1"> 
+            <input type="checkbox" class = "box-1">
           </div>
-          <h3 class="subtitle">Want to create a room?</h3> 
+          <h3 class="subtitle">Want to create a room?</h3>
         </div>
-        <input type="button" class="formButton" id="previousLast" value="Previous" />
-        <input type="button" class="formButtonSubmit" id = "submission" value="Submit" onclick="changeWindow()"/>
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton submit" id = "submission" value="Submit" onclick="changeWindow()"/>
       </fieldset>
     </form>
     <div id="middle"></div>

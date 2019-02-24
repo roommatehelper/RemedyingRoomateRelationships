@@ -1,34 +1,29 @@
 $(document).ready(function () {
     var current, next, prev;
-    $("#begin").click(function () {
+
+    $(".forward").click(function () {
         current = $(this).parent();
         next = $(this).parent().next();
-        next.show();
-        current.hide();
+        var valid = true;
+
+        //if all fields are valid, continue, else error
+        var fields = current.children();
+        for (var i = 0; i < fields.length; i++) {
+          if(fields[i].localName == "input" && fields[i].type != "button")
+            if(!fields[i].checkValidity()) {
+              valid = false;
+              fields[i].classList.add("error");
+            }
+            else
+              fields[i].classList.remove("error");
+        }
+        if(valid) {
+          next.show();
+          current.hide();
+        }
     });
 
-    $("#next").click(function () {
-        current = $(this).parent();
-        next = $(this).parent().next();
-        next.show();
-        current.hide();
-    });
-
-    $("#nextMiddle").click(function () {
-        current = $(this).parent();
-        next = $(this).parent().next();
-        next.show();
-        current.hide();
-    });
-
-    $("#previous").click(function () {
-        current = $(this).parent();
-        prev = $(this).parent().prev();
-        prev.show();
-        current.hide();
-    });
-
-    $("#previousLast").click(function () {
+    $(".previous").click(function () {
         current = $(this).parent();
         prev = $(this).parent().prev();
         prev.show();
@@ -39,6 +34,22 @@ $(document).ready(function () {
       return false;
     })
 });
+
+function signIn() {
+  var input = document.getElementsByClassName("signInInput");
+  var valid = true;
+  for (var i = 0; i < input.length; i++){
+    if(!input[i].checkValidity()){
+      valid = false;
+      input[i].classList.add("error");
+    }
+    else {
+      input[i].classList.remove("error");
+    }
+  }
+  if(valid)
+    changeWindow();
+}
 
 function changeWindow() {
     window.location="dashboard.html";
