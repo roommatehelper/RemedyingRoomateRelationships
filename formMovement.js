@@ -1,98 +1,71 @@
 $(document).ready(function () {
     var current, next, prev;
-    $("#begin").click(function () {
+
+    $(".forward").click(function () {
         current = $(this).parent();
         next = $(this).parent().next();
-        next.show();
-        current.hide();
+        var valid = true;
+
+        //if all fields are valid, continue, else error
+        var fields = current.children();
+        for (var i = 0; i < fields.length; i++) {
+          if(fields[i].localName == "input" && fields[i].type != "button")
+            if(!fields[i].checkValidity()) {
+              valid = false;
+              fields[i].classList.add("error");
+            }
+            else
+              fields[i].classList.remove("error");
+        }
+        if(valid) {
+          next.show();
+          current.hide();
+        }
     });
 
-    $("#next").click(function () {
-        current = $(this).parent();
-        next = $(this).parent().next();
-        next.show();
-        current.hide();
-    });
-
-    $("#nextMiddle").click(function () {
-        current = $(this).parent();
-        next = $(this).parent().next();
-        next.show();
-        current.hide();
-    });
-
-    $("#previous").click(function () {
+    $(".previous").click(function () {
         current = $(this).parent();
         prev = $(this).parent().prev();
         prev.show();
         current.hide();
     });
-
-    $("#previousLast").click(function () {
-        current = $(this).parent();
-        prev = $(this).parent().prev();
-        prev.show();
-        current.hide();
-    });
-
-    $("#submission").click(function () {
-        return false;
-    })
 });
+
+function signIn() {
+  var input = document.getElementsByClassName("signInInput");
+  var valid = true;
+  for (var i = 0; i < input.length; i++){
+    if(!input[i].checkValidity()){
+      valid = false;
+      input[i].classList.add("error");
+    }
+    else {
+      input[i].classList.remove("error");
+    }
+  }
+  if(valid)
+    changeWindow();
+}
+
+function checkPassword() {
+    var password = document.getElementById("p1");
+    var secondPassword = document.getElementById("p2");
+    var error = document.getElementById("errormsg");
+    if (password.value != secondPassword.value) {
+      secondPassword.setCustomValidity('Passwords do not match');
+      if(!error) {
+        error = document.createElement("p");
+        error.innerHTML = "passwords do not match";
+        error.setAttribute("id", "errormsg");
+        password.parentNode.appendChild(error);
+      }
+    }
+    else {
+      secondPassword.setCustomValidity('');
+      error.parentNode.removeChild(error);
+    }
+}
 
 function changeWindow() {
     window.location="dashboard.html";
-}
-function changeWindowRules() {
-
-    var line = document.createElement("div");
-    line.className += "line";
-    var rule = document.createElement("button");
-    rule.className += "ruleTitle";
-    rule.type = "button";
-    line.appendChild(rule);
-    var desc = document.createElement("div");
-    desc.className += "ruleDescription";
-    line.appendChild(desc);
-
-    var elements = document.getElementById("newRuleForm").elements;
-    var obj ={};
-    for(var i = 0 ; i < elements.length ; i++){
-        var item = elements.item(i);
-        obj[item.name] = item.value;
-    }
-
-    var node = obj["description"];
-
-    rule.innerHTML += node;
-
-    var list = document.getElementsByClassName("rules");
-    list[0].appendChild(line);
-
-    window.location.hash = "#";
-}
-
-function checkPassword(p1, p2) {
-    var secondPassword = document.getElementById("p2");
-    if (p1.value != p2.value) {
-        secondPassword.setCustomValidity('Passwords do not match');
-    } else {
-        secondPassword.setCustomValidity('');
-    }
-}
-
-
-var coll = document.getElementsByClassName("ruleTitle");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
 }

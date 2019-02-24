@@ -1,7 +1,6 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="styles/rules.css">
   <link rel="stylesheet" href="styles/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -23,44 +22,47 @@
     </div>
   </header>
 
-  <div class="rulesForm">
-    <form id="rulesInfo">
+  <div class="rulesList">
+    <form class="infoList">
       <fieldset action=#middle method="get">
-        <div class="rules">
+        <div class="list">
           <div class="line">
-            <button class= "ruleTitle" type="button">No people over the night before a midterm</button>
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">No people over the night before a midterm</button>
               <div class="ruleDescription">
-                <p>01/29/2019</p>
-                <p>06/15/2019</p>
-                <p>Roommate_1, Roommate_2, Roommate_3</p>
+                <p>2019-02-12 to 2019-06-15<br><br>
+                  TK, David, Rabin</p>
+                <p>Details: Give at least a few hours' notice if you need to have someone over!</p>
               </div>
           </div>
           <div class="line">
-            <button class= "ruleTitle" type="button">Keep it quiet on the weekdays</button>
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">Keep it quiet on the weekdays</button>
             <div class="ruleDescription">
-            <p>02/12/2019</p>
-            <p>06/15/2019</p>
-            <p>Yes</p>
+            <p>2019-02-12 to 2019-06-15<br><br>
+            TK, David, Rabin, Daniella</p>
           </div>
           </div>
         </div>
         <a href=#middle>
-          <input type="button" class="add" value="Add"/>
+          <input type="button" class="formButton add" value="Add"/>
         </a>
       </fieldset>
     </form>
   </div>
+
   <div class="registrationForm">
-    <form id="newRuleForm">
-      <fieldset>
+    <form class="multiPageForm" id="newRuleForm">
+      <fieldset id= "start">
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li>Rule Schedule</li>
           <li>Roommate Agreement</li>
         </ul>
-        <h2 class="signUpTitle">A Brief Description</h2>
-        <input type="text" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
-        <input type="button" class="formButton" id="nextMiddle" value="Next" />
+        <h2 class="formTitle">A Brief Description</h2>
+        <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
+        <textarea name="details" placeholder="Details (optional)"></textarea>
+        <input type="button" class="formButton forward" value="Next"/>
       </fieldset>
 
       <fieldset>
@@ -69,35 +71,39 @@
           <li class="active">Rule Schedule</li>
           <li>Roommate Agreement</li>
         </ul>
-        <h2 class="signUpTitle">Dates</h2>
-        <input type="date" required pattern=".*" />
-        <input type="date" required pattern=".*" />
-        <input type="button" class="formButton" id="previous" value="Previous" />
-        <input type="button" class="formButton" id="next" value="Next" />
+        <h2 class="formTitle">Dates</h2>
+        <input type="date" class="date" name= "date1" required pattern=".*" />
+        <input type="date" class="date" name="date2" required pattern=".*" />
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
-      <fieldset>
+      <fieldset id="end">
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li class="active">Rule Schedule</li>
           <li class="active">Roommate Agreement</li>
         </ul>
-        <h2 class="signUpTitle">Who Agrees?</h2>
-        <input type="search" placeholder="SEARCH ROOMMATES NAME" />
+        <h2 class="formTitle">Who Agrees?</h2>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
         <div class="createNewRoom">
           <div class="checkHolder">
             <input type="checkbox" class="box-1">
           </div>
           <h3 class="subtitle">Consensus?</h3>
         </div>
-        <input type="button" class="formButton" id="previousLast" value="Previous" />
-        <input type="submit" class="formButtonSubmit" value="Submit" onclick="changeWindowRules()" />
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
       </fieldset>
     </form>
     <div id="middle"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
+  <script src="edit.js"></script>
 </body>
 
 </html>
