@@ -55,11 +55,21 @@ function changeWindow() {
     window.location="dashboard.html";
 }
 
-function checkPassword(p1, p2) {
+function checkPassword() {
+    var password = document.getElementById("p1");
     var secondPassword = document.getElementById("p2");
-    if (p1.value != p2.value) {
-        secondPassword.setCustomValidity('Passwords do not match');
-    } else {
-        secondPassword.setCustomValidity('');
+    var error = document.getElementById("errormsg");
+    if (password.value != secondPassword.value) {
+      secondPassword.setCustomValidity('Passwords do not match');
+      if(!error) {
+        error = document.createElement("p");
+        error.innerHTML = "passwords do not match";
+        error.setAttribute("id", "errormsg");
+        password.parentNode.appendChild(error);
+      }
+    }
+    else {
+      secondPassword.setCustomValidity('');
+      error.parentNode.removeChild(error);
     }
 }
