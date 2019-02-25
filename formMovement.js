@@ -29,10 +29,6 @@ $(document).ready(function () {
         prev.show();
         current.hide();
     });
-
-    $("#submission").click(function () {
-      return false;
-    })
 });
 
 function signIn() {
@@ -49,10 +45,6 @@ function signIn() {
   }
   if(valid)
     changeWindow();
-}
-
-function changeWindow() {
-    window.location="dashboard.html";
 }
 
 function checkPassword() {
@@ -72,4 +64,8 @@ function checkPassword() {
       secondPassword.setCustomValidity('');
       error.parentNode.removeChild(error);
     }
+}
+
+function changeWindow() {
+    window.location="dashboard.html";
 }
