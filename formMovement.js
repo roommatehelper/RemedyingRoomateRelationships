@@ -43,6 +43,7 @@ function signIn() {
       input[i].classList.remove("error");
     }
   }
+
   if(valid)
     changeWindow();
 }
