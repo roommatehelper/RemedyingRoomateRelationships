@@ -1,53 +1,17 @@
-function addRule() {
+var acc = "a";
 
-    var elements = document.getElementById("newRuleForm").elements;
-    var obj ={};
-    for(var i = 0 ; i < elements.length ; i++){
-        var item = elements.item(i);
-        obj[item.name] = item.value;
+window.addEventListener('DOMContentLoaded',
+  restorePayments()
+);
+
+function restorePayments() {
+  var payments = JSON.parse(localStorage.getItem("payments"));
+
+  if(payments){
+    for(var i = 1; i < rules.length; i+= 2){
+      add($.parseHTML(payments[i])[0]);
     }
-
-    var line = document.createElement("div");
-    line.className += "line";
-    var rule = document.createElement("button");
-    rule.className += "ruleTitle";
-    rule.type = "button";
-    rule.innerHTML += obj["description"];
-    line.appendChild(rule);
-
-    var etc = document.createElement("div");
-    etc.className += "ruleDescription";
-    var desc = document.createElement("p");
-    var details = document.createElement("p");
-
-    desc.innerHTML += obj["date1"] + " to " + obj["date2"] + "<br><br>";
-
-    var list = [];
-    var inputElements = document.getElementsByClassName("checklist");
-    for(var i=0; inputElements[i]; i++){
-          if(inputElements[i].checked)
-               list.push(inputElements[i].value);
-    }
-
-    for(var i = 0; i < list.length; i++){
-      desc.innerHTML += list[i];
-      if(i != list.length - 1) {
-        desc.innerHTML += ", ";
-      }
-    }
-
-    etc.appendChild(desc);
-    if(obj["details"] != "") {
-      details.innerHTML += "Details: " + obj["details"];
-      etc.appendChild(details);
-    }
-
-    line.appendChild(etc);
-
-    rule.setAttribute("onclick","toggleDropdown(this)");
-
-    add(line);
-
+  }
 }
 
 function addPayment() {
@@ -105,6 +69,17 @@ function addPayment() {
   payment.setAttribute("onclick","toggleDropdown(this)");
 
   add(line);
+
+  var payments = JSON.parse(localStorage.getItem('payments'));
+
+  if (payments) {
+    payments.push(obj["description"], line.outerHTML.toString());
+    localStorage.setItem('payments', JSON.stringify(payments));
+  }
+  else{
+    payments = [obj["description"], line.outerHTML.toString()];
+    localStorage.setItem('payments', JSON.stringify(payments));
+  }
 }
 
 function add(el) {

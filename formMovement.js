@@ -31,16 +31,6 @@ $(document).ready(function () {
     });
 });
 
-function signIn(form) {
-  var input = document.getElementsByClassName("signInInput");
-  if(input[0].value == "a@a.a" && input[1].value == "a") {
-    form.action = "dashboard.html";
-  }
-  else if(input[0].value == "b@b.b" && input[1].value == "b") {
-    form.action = "dashboard2.html";
-  }
-}
-
 function checkPassword() {
     var password = document.getElementById("p1");
     var secondPassword = document.getElementById("p2");
@@ -60,6 +50,24 @@ function checkPassword() {
     }
 }
 
-function changeWindow() {
-    window.location="dashboard.html";
+function signIn(form) {
+  var input = document.getElementsByClassName("signInInput");
+  if(input[0].value == "a@a.a" && input[1].value == "a") {
+    form.action = "dashboard.html";
+    acc = "a";
+  }
+  else if(input[0].value == "b@b.b" && input[1].value == "b") {
+    form.action = "dashboard.html";
+    acc = "b";
+  }
+}
+
+function restoreRules() {
+  var rules = JSON.parse(localStorage.getItem("rules"));
+
+  if(rules){
+    for(var i = 1; i < rules.length; i+= 2){
+      add($.parseHTML(rules[i])[0]);
+    }
+  }
 }
