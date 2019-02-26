@@ -146,7 +146,6 @@ div.headernav {
   width: 100%;
   margin: 2%;
   background: rgb(255, 255, 255);
-  font-family: montserrat;
   color: #333;
   letter-spacing: 2px;
   text-indent: 5%;
@@ -223,7 +222,6 @@ input, textarea{
 	border-radius: 5px;
 	margin: 2% auto;
 	width: 100%;
-	font-family: montserrat;
 	letter-spacing: 1.5px;
 	color: #2C3E50;
 	font-size: 12px;
@@ -331,7 +329,6 @@ input[type=checkbox]
 }
 
 .checkitem p , .infoList p{
-	font-family: montserrat;
 	letter-spacing: 1.5px;
 	color: #2C3E50;
   font-size: 12px;
@@ -369,7 +366,6 @@ input[type=checkbox]
 	color: #666;
 	padding: 20px;
 	text-align: left;
-	font-family: Montserrat, sans-serif;
 	font-size: 14pt;
 }
 
