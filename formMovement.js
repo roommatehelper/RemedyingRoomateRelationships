@@ -31,20 +31,14 @@ $(document).ready(function () {
     });
 });
 
-function signIn() {
+function signIn(form) {
   var input = document.getElementsByClassName("signInInput");
-  var valid = true;
-  for (var i = 0; i < input.length; i++){
-    if(!input[i].checkValidity()){
-      valid = false;
-      input[i].classList.add("error");
-    }
-    else {
-      input[i].classList.remove("error");
-    }
+  if(input[0].value == "a@a.a" && input[1].value == "a") {
+    form.action = "dashboard.html";
   }
-  if(valid)
-    changeWindow();
+  else if(input[0].value == "b@b.b" && input[1].value == "b") {
+    form.action = "dashboard2.html";
+  }
 }
 
 function checkPassword() {
