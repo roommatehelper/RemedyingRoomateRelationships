@@ -1,1 +1,1 @@
-<h2>jQuery and AJAX is FUN!!!</h2>
+<h2>TESTING LOAD FUNCTION FOR JQUERY</h2>
