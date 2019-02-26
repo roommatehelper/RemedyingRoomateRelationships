@@ -1,6 +1,6 @@
 
 $(function(){
-    $("#ruleSum").load("rulesSum.txt");
+    $("#ruleSum").load("rules.html #titleForSum");
 });
 
 
