@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
-    $( "#ruleSum" ).load( "ruleSum.txt" );
+    $.get( "ruleSum.txt", function( txt ) {
+        $( "#ruleSum" ).text( txt );
+      });
 });
 
 
