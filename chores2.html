@@ -1,0 +1,104 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="headernav">
+      <a href="dashboard2.html">
+        <p>
+          <i class="material-icons">arrow_back</i>Dashboard</p>
+      </a>
+    </div>
+    <div class="title">
+      <h1> Chores </h1>
+    </div>
+    <div class="headernav account">
+      <a href="#">My Account</a>
+      <a href="index.html">Log Out</a>
+    </div>
+  </header>
+
+  <div class="listwrap">
+    <form class="infoList">
+      <fieldset action=#middle method="get">
+        <div class="list">
+          <div class="line">
+            <button class= "ruleTitle" id = "titleForSum" type="button"
+            onclick="toggleDropdown(this)">Take out the trash - You</button>
+              <div class="ruleDescription">
+                <p>Sunday</p>
+                <input type="button" class="descButton remind" value="Done" onclick="deleteRule(this)"/>
+              </div>
+          </div>
+          <div class="line">
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">Keep it quiet on the weekdays</button>
+            <div class="ruleDescription">
+            <p>2019-02-12 to 2019-06-15<br><br>
+            TK, David, Rabin, Daniella</p>
+            <input type="button" class="descButton remind" value="Remind" onclick="sendRuleReminder(this)"/>
+          </div>
+          </div>
+        </div>
+        <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="registrationForm">
+    <form class="multiPageForm modal" id="newRuleForm">
+      <fieldset id= "start">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <ul id="progressbar">
+          <li class="active">Rule Description</li>
+          <li>Rule Schedule</li>
+          <li>Roommate Agreement</li>
+        </ul>
+        <h2 class="formTitle">A Brief Description</h2>
+        <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
+        <textarea name="details" placeholder="Details (optional)"></textarea>
+        <input type="button" class="formButton forward" value="Next"/>
+      </fieldset>
+
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <ul id="progressbar">
+          <li class="active">Rule Description</li>
+          <li class="active">Rule Schedule</li>
+          <li>Roommate Agreement</li>
+        </ul>
+        <h2 class="formTitle">Dates</h2>
+        <input type="date" class="date" name= "date1" required pattern=".*" />
+        <input type="date" class="date" name="date2" required pattern=".*" />
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton forward" value="Next" />
+      </fieldset>
+
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <ul id="progressbar">
+          <li class="active">Rule Description</li>
+          <li class="active">Rule Schedule</li>
+          <li class="active">Roommate Agreement</li>
+        </ul>
+        <h2 class="formTitle">Who Agrees?</h2>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
+          <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
+        <input type="button" class="formButton previous" value="Previous"/>
+        <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
+      </fieldset>
+    </form>
+    <div id="middle"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="formMovement.js"></script>
+  <script src="rules.js"></script>
+</body>
+
+</html>
