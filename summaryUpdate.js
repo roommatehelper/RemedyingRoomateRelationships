@@ -1,7 +1,7 @@
 
 
 $(function(){
-    var x = getCookieValue("username");
+    var x = document.cookie;
     $("#ruleSum").text(x);
 });
 
