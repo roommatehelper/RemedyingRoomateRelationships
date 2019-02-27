@@ -1,3 +1,4 @@
 $(function(){
-    $("#ruleSum").load("rules.html #titleForSum");
+    var x = document.cookie;
+    $("#ruleSum").text(x);
 });
