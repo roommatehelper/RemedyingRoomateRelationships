@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <div class="rulesList">
+  <div class="listwrap">
     <form class="infoList">
       <fieldset action=#middle method="get">
         <div class="list">
@@ -32,6 +32,8 @@
               <div class="ruleDescription">
                 <p>$150.00 <br><br>
                   Daniella, TK, David, and Rabin owe you $30.00</p>
+                  <input type="button" class="descButton complete" value="Complete" onclick="deletePayment(this)"/>
+                  <input type="button" class="descButton remind" value="Remind" onclick="sendPaymentReminder(this)"/>
               </div>
           </div>
           <div class="line">
@@ -46,16 +48,20 @@
           </div>
           </div>
         </div>
-        <a href=#middle>
-          <input type="button" class="formButton add" value="Add"/>
-        </a>
+        <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
       </fieldset>
     </form>
   </div>
 
+  <div class='reminderSent'>
+    <span class="close closeAlert">&times;</span>
+      <p class='message'>Reminder sent!</p>
+  </div>
+
   <div class="registrationForm">
-    <form class="multiPageForm" id="newPaymentForm">
+    <form class="multiPageForm modal" id="newPaymentForm">
       <fieldset id= "start">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Payment Description</li>
           <li>Roommate Selection</li>
@@ -68,7 +74,8 @@
         <input type="button" class="formButton forward" value="Next"/>
       </fieldset>
 
-      <fieldset id="end">
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Payment Description</li>
           <li class="active">Roommate Selection</li>
@@ -82,7 +89,6 @@
         <input type="button" class="formButton submit" value="Submit" onclick="addPayment()"/>
       </fieldset>
     </form>
-    <div id="middle"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>

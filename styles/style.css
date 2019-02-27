@@ -1,4 +1,4 @@
-/*** Background ***/
+listwrap/*** Background ***/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html {
   scroll-behavior: smooth;
@@ -164,7 +164,7 @@ div.headernav {
 
 .multiPageForm {
 	width: 65%;
-	margin: 5% auto;
+	margin: 0 auto;
 }
 
 .multiPageForm input[type=checkbox]{
@@ -173,16 +173,41 @@ div.headernav {
 	float: left;
 }
 
-.formButton {
+.formButton, .descButton {
 	width: 100px;
 	background: rgb(92, 92, 92);
 	font-weight: bold;
 	color: white;
 	border: none;
 	border-radius: 5px;
-	margin: 1%;
 	transition: background .4s ease-in-out;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+.formButton.forward {
+  float: right;
+}
+
+.descButton.remind {
+  float: right;
+  margin-top: 0;
+  margin-right: 2%;
+}
+
+.formButton.previous {
+  float: left;
+}
+
+.descButton.delete, .descButton.complete {
+  float: left;
+  margin-top: 0;
+  margin-left: 2%;
+}
+
+.formButton.submit {
+	border: 10px;
+	background: rgb(66, 201, 73);
+	font-weight: bold;
+  float: right;
 }
 
 .formButton.large {
@@ -190,18 +215,31 @@ div.headernav {
   height: 50px;
 }
 
-.formButton:hover {
-	background: #2f2f2f;
+.descButton {
+  box-shadow: none;
+}
+.descButton.delete {
+  background: #CD2626;
 }
 
-.formButton.submit {
-	border: 10px;
-	background: rgb(66, 201, 73);
-	font-weight: bold;
+.descButton.complete {
+  background: #0000de;
+}
+
+.formButton:hover, .descButton:hover {
+	background: #2f2f2f;
 }
 
 .formButton.submit:hover {
 	background: rgb(82, 223, 82);
+}
+
+.descButton.delete:hover {
+	background: firebrick;
+}
+
+.descButton.complete:hover {
+  background: #000894;
 }
 
 .registrationForm fieldset {
@@ -218,6 +256,18 @@ div.headernav {
 
 .registrationForm fieldset:not(:first-of-type) {
 	display: none;
+}
+
+.registrationForm.modal fieldset {
+	background:rgb(255, 255, 255);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 50%;
+	margin: 0 10%;
+	position: relative;
 }
 
 input, textarea{
@@ -384,17 +434,17 @@ button.active, .ruleTitle:hover {
 }
 
 button.ruleTitle:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
+  content: '\22EF';
+  font-size: 20px;
   float: right;
   margin-left: 5px;
 }
 
 button.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  content: "\2796";
 }
 
-.rulesList {
+.listwrap {
 	padding-top: 1%;
 	margin: 5%;
 	position: relative;
@@ -428,3 +478,61 @@ button.active:after {
 #errormsg {
   color: red;
 }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+.modal fieldset{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* alert */
+.reminderSent{
+  display: none;
+  position: fixed;
+  width: 20%;
+  left:40%;
+  bottom:0%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top-left-radius:5px;
+  border-top-right-radius: 5px;
+  background-color: #e8f7ed;
+  border: 1px solid #30b661;
+  color: #157f3c;
+  text-align: center;
+  letter-spacing: 1px;
+
+}
+
+.message{
+    padding: 5px;
+    font-size: 12px;
+  }

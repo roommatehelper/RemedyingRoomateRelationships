@@ -14,6 +14,21 @@ function restorePayments() {
   }
 }
 
+function openModal() {
+  document.getElementsByClassName("modal")[0].style.display = "block";
+}
+
+function closeModal() {
+  var start = document.getElementById("start");
+  start.style.display = "block";
+  var end = document.getElementsByClassName("end");
+  for(var i = 0; i < end.length; i++)
+    end[i].style.display = "none";
+
+  document.getElementsByClassName("modal")[0].style.display = "none";
+  document.getElementById("newPaymentForm").reset();
+}
+
 function addPayment() {
   var elements = document.getElementById("newPaymentForm").elements;
   var obj ={};
@@ -34,6 +49,16 @@ function addPayment() {
   etc.className += "ruleDescription";
   var desc = document.createElement("p");
   var details = document.createElement("p");
+  var del = document.createElement("input");
+    del.setAttribute("type", "button");
+    del.setAttribute("class", "descButton complete");
+    del.setAttribute("value", "Complete");
+    del.setAttribute("onclick", "deletePayment(this)");
+  var remind = document.createElement("input");
+    remind.setAttribute("type", "button");
+    remind.setAttribute("class", "descButton remind");
+    remind.setAttribute("value", "Remind");
+    remind.setAttribute("onclick", "sendRuleReminder()");
 
   var cost = parseFloat(obj["cost"]);
   desc.innerHTML += "$" + String(cost) + "<br><br>"
@@ -64,6 +89,9 @@ function addPayment() {
     etc.appendChild(details);
   }
 
+  etc.appendChild(del);
+  etc.appendChild(remind);
+
   line.appendChild(etc);
 
   payment.setAttribute("onclick","toggleDropdown(this)");
@@ -88,10 +116,7 @@ function add(el) {
 
   window.location.hash = "#";
 
-  var start = document.getElementById("start");
-  start.style.display = "block";
-  var end = document.getElementById("end");
-  end.style.display = "none";
+  closeModal();
 }
 
 function toggleDropdown(el) {
@@ -103,3 +128,39 @@ function toggleDropdown(el) {
         content.style.display = "block";
       }
 }
+
+function sendPaymentReminder() {
+
+}
+
+function deletePayment(el) {
+  var payments = JSON.parse(localStorage.getItem("payments"));
+  var title = el.parentNode.previousSibling.innerHTML;
+  var index = payments.indexOf(title);
+  payments.splice(index, 2);
+  localStorage.setItem("payments", JSON.stringify(payments));
+
+  el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+}
+
+//REMINDERS
+function sendPaymentReminder(){
+
+  //send payment title and amt owed to other user's dashboard
+
+  $('.reminderSent').css('display', 'block');
+
+  //close popup after 5 seconds
+  setTimeout(function(){
+    $('.reminderSent').css('animation', 'none');
+		$('.reminderSent').css('display', 'none');
+  }, 5000)
+}
+
+//close popup when x is clicked
+$('.closeAlert').click(function(){
+    setTimeout(function(){
+      $('.reminderSent').css('animation', 'none');
+		  $('.reminderSent').css('display', 'none');
+    }, 100);
+});

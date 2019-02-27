@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <div class="rulesList">
+  <div class="listwrap">
     <form class="infoList">
       <fieldset action=#middle method="get">
         <div class="list">
@@ -33,6 +33,8 @@
                 <p>2019-02-12 to 2019-06-15<br><br>
                   TK, David, Rabin</p>
                 <p>Details: Give at least a few hours' notice if you need to have someone over!</p>
+                <input type="button" class="descButton delete" value="Delete" onclick="deleteRule(this)"/>
+                <input type="button" class="descButton remind" value="Remind" onclick="sendRuleReminder()"/>
               </div>
           </div>
           <div class="line">
@@ -41,19 +43,25 @@
             <div class="ruleDescription">
             <p>2019-02-12 to 2019-06-15<br><br>
             TK, David, Rabin, Daniella</p>
+            <input type="button" class="descButton delete" value="Delete" onclick="deleteRule(this)"/>
+            <input type="button" class="descButton remind" value="Remind" onclick="sendRuleReminder()"/>
           </div>
           </div>
         </div>
-        <a href=#middle>
-          <input type="button" class="formButton add" value="Add"/>
-        </a>
+        <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
       </fieldset>
     </form>
   </div>
 
+  <div class='reminderSent'>
+	  <span class="close closeAlert">&times;</span>
+      <p class='message'>Reminder sent!</p>
+  </div>
+
   <div class="registrationForm">
-    <form class="multiPageForm" id="newRuleForm">
+    <form class="multiPageForm modal" id="newRuleForm">
       <fieldset id= "start">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li>Rule Schedule</li>
@@ -65,7 +73,8 @@
         <input type="button" class="formButton forward" value="Next"/>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li class="active">Rule Schedule</li>
@@ -78,7 +87,8 @@
         <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
-      <fieldset id="end">
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li class="active">Rule Schedule</li>
@@ -89,11 +99,10 @@
           <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
-        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton previous" value="Previous"/>
         <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
       </fieldset>
     </form>
-    <div id="middle"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>

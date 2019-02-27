@@ -22,39 +22,37 @@
     </div>
   </header>
 
-  <div class="rulesList">
+  <div class="listwrap">
     <form class="infoList">
       <fieldset action=#middle method="get">
         <div class="list">
           <div class="line">
-            <button class= "ruleTitle" type="button"
-            onclick="toggleDropdown(this)">No people over the night before a midterm</button>
+            <button class= "ruleTitle" id = "titleForSum" type="button"
+            onclick="toggleDropdown(this)">Take out the trash - You</button>
               <div class="ruleDescription">
-                <p>01/29/2019</p>
-                <p>06/15/2019</p>
-                <p>TK, David, Rabin</p>
+                <p>Sunday</p>
+                <input type="button" class="descButton remind" value="Done" onclick="deleteRule(this)"/>
               </div>
           </div>
           <div class="line">
             <button class= "ruleTitle" type="button"
             onclick="toggleDropdown(this)">Keep it quiet on the weekdays</button>
             <div class="ruleDescription">
-            <p>02/12/2019</p>
-            <p>06/15/2019</p>
-            <p>TK, David, Rabin, Daniella</p>
+            <p>2019-02-12 to 2019-06-15<br><br>
+            TK, David, Rabin, Daniella</p>
+            <input type="button" class="descButton remind" value="Remind" onclick="sendRuleReminder(this)"/>
           </div>
           </div>
         </div>
-        <a href=#middle>
-          <input type="button" class="formButton add" value="Add"/>
-        </a>
+        <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
       </fieldset>
     </form>
   </div>
 
   <div class="registrationForm">
-    <form class="multiPageForm" id="newRuleForm">
+    <form class="multiPageForm modal" id="newRuleForm">
       <fieldset id= "start">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li>Rule Schedule</li>
@@ -62,10 +60,12 @@
         </ul>
         <h2 class="formTitle">A Brief Description</h2>
         <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
+        <textarea name="details" placeholder="Details (optional)"></textarea>
         <input type="button" class="formButton forward" value="Next"/>
       </fieldset>
 
-      <fieldset>
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li class="active">Rule Schedule</li>
@@ -78,7 +78,8 @@
         <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
-      <fieldset id="end">
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
           <li class="active">Rule Schedule</li>
@@ -89,13 +90,7 @@
           <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
-        <div class="createNewRoom">
-          <div class="checkHolder">
-            <input type="checkbox" class="box-1">
-          </div>
-          <h3 class="subtitle">Consensus?</h3>
-        </div>
-        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton previous" value="Previous"/>
         <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
       </fieldset>
     </form>
@@ -103,7 +98,7 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
-  <script src="edit.js"></script>
+  <script src="rules.js"></script>
 </body>
 
 </html>

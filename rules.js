@@ -14,6 +14,21 @@ function restoreRules() {
   }
 }
 
+function openModal() {
+  document.getElementsByClassName("modal")[0].style.display = "block";
+}
+
+function closeModal() {
+  var start = document.getElementById("start");
+  start.style.display = "block";
+  var end = document.getElementsByClassName("end");
+  for(var i = 0; i < end.length; i++)
+    end[i].style.display = "none";
+
+  document.getElementsByClassName("modal")[0].style.display = "none";
+  document.getElementById("newRuleForm").reset();
+}
+
 function addRule() {
     var elements = document.getElementById("newRuleForm").elements;
     var obj ={};
@@ -34,6 +49,16 @@ function addRule() {
     etc.className += "ruleDescription";
     var desc = document.createElement("p");
     var details = document.createElement("p");
+    var del = document.createElement("input");
+      del.setAttribute("type", "button");
+      del.setAttribute("class", "descButton delete");
+      del.setAttribute("value", "Delete");
+      del.setAttribute("onclick", "deleteRule(this)");
+    var remind = document.createElement("input");
+      remind.setAttribute("type", "button");
+      remind.setAttribute("class", "descButton remind");
+      remind.setAttribute("value", "Remind");
+      remind.setAttribute("onclick", "sendRuleReminder()");
 
     desc.innerHTML += obj["date1"] + " to " + obj["date2"] + "<br><br>";
 
@@ -56,6 +81,9 @@ function addRule() {
       details.innerHTML += "Details: " + obj["details"];
       etc.appendChild(details);
     }
+
+    etc.appendChild(del);
+    etc.appendChild(remind);
 
     line.appendChild(etc);
 
@@ -81,10 +109,7 @@ function add(el) {
 
   window.location.hash = "#";
 
-  var start = document.getElementById("start");
-  start.style.display = "block";
-  var end = document.getElementById("end");
-  end.style.display = "none";
+  closeModal();
 }
 
 function toggleDropdown(el) {
@@ -96,3 +121,46 @@ function toggleDropdown(el) {
         content.style.display = "block";
       }
 }
+
+function tempAlert(msg,duration)
+{
+ var el = document.createElement("div");
+ el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },duration);
+ document.body.appendChild(el);
+}
+
+function deleteRule(el) {
+  var rules = JSON.parse(localStorage.getItem("rules"));
+  var title = el.parentNode.previousSibling.innerHTML;
+  var index = rules.indexOf(title);
+  rules.splice(index, 2);
+  localStorage.setItem('rules', JSON.stringify(rules));
+
+  el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+}
+
+//REMINDERS
+function sendRuleReminder(){
+
+  //send rule to other user's dashboard
+
+  $('.reminderSent').css('display', 'block');
+
+  //close popup after 5 seconds
+  setTimeout(function(){
+    $('.reminderSent').css('animation', 'none');
+		$('.reminderSent').css('display', 'none');
+  }, 5000)
+}
+
+//close popup when x is clicked
+$('.closeAlert').click(function(){
+    setTimeout(function(){
+      $('.reminderSent').css('animation', 'none');
+		  $('.reminderSent').css('display', 'none');
+    }, 100);
+});
