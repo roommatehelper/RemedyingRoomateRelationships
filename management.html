@@ -20,7 +20,7 @@
   </header>
 
 
-<div class="rulesList">
+<div class="listwrap">
     <form class="infoList">
       <fieldset action=#middle method="get">
         <div class="list">
@@ -52,29 +52,29 @@
                 <p>Joined: 02/26/2019</p>
               </div>
           </div>
-          <a href=#middle>
-            <input type="button" class="formButton add" value="Add"/>
-          </a>
+        </div>
+            <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
       </fieldset>
-      
+
     </form>
   </div>
 
-  <div class="registrationForm">
-    <form class="multiPageForm" id="newMemberForm">
+  <div class="registrationForm" >
+    <form class="multiPageForm modal" id="newMemberForm">
 
-    <fieldset>
+    <fieldset id="start">
+      <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
-          <li >PERSONAL DETAILS</li>
-          <li>ACCOUNT DETAILS</li>
-          <li>ROOM DETAILS</li>
+          <li>Contact Information</li>
+          <li >Invite Message</li>
         </ul>
         <h2 class="formTitle">Add a New Roommate!</h2>
         <h3 class="subtitle">Your roommate can also join at signup with the following code: 34AC7</h3>
         <input type="button" class="formButton forward" value="Next" />
     </fieldset>
 
-    <fieldset id= "start">
+    <fieldset class="end">
+      <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Contact Information</li>
           <li >Invite Message</li>
@@ -85,7 +85,8 @@
         <input type="button" class="formButton forward" value="Next"/>
     </fieldset>
 
-    <fieldset id="end">
+    <fieldset class="end">
+      <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Contact Information</li>
           <li class="active">Invite Message</li>
@@ -97,7 +98,7 @@
     </fieldset>
   </form>
 
-  <div id="middle"></div>
+  </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
