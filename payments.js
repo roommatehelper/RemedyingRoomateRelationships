@@ -8,7 +8,7 @@ function restorePayments() {
   var payments = JSON.parse(localStorage.getItem("payments"));
 
   if(payments){
-    for(var i = 1; i < rules.length; i+= 2){
+    for(var i = 1; i < payments.length; i+= 2){
       add($.parseHTML(payments[i])[0]);
     }
   }

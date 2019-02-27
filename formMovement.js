@@ -51,15 +51,7 @@ function checkPassword() {
 }
 
 function signIn(form) {
-  var input = document.getElementsByClassName("signInInput");
-  if(input[0].value == "a@a.a" && input[1].value == "a") {
-    form.action = "dashboard.html";
-    acc = "a";
-  }
-  else if(input[0].value == "b@b.b" && input[1].value == "b") {
-    form.action = "dashboard.html";
-    acc = "b";
-  }
+  form.action = "dashboard.html";
 }
 
 function restoreRules() {
