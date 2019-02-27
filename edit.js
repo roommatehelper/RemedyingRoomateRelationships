@@ -105,6 +105,35 @@ function addPayment() {
   add(line);
 }
 
+function addMember() {
+  var elements = document.getElementById("newMemberForm").elements;
+  var obj ={};
+  for(var i = 0 ; i < elements.length ; i++){
+      var item = elements.item(i);
+      obj[item.name] = item.value;
+  }
+  var line = document.createElement("div");
+  line.className += "line";
+  var rule = document.createElement("button");
+  rule.className += "ruleTitle";
+  rule.type = "button";
+  rule.innerHTML += obj["membername"];
+  line.appendChild(rule);
+  var etc = document.createElement("div");
+  etc.className += "ruleDescription";
+  var desc = document.createElement("p");
+  var details = document.createElement("p");
+  details.innerHTML += "Invite Pending";
+  etc.appendChild(details);
+
+  line.appendChild(etc);
+
+  rule.setAttribute("onclick","toggleDropdown(this)");
+
+  add(line);
+
+}
+
 function add(el) {
   var list = document.getElementsByClassName("list");
   list[0].appendChild(el);
