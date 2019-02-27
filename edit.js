@@ -1,12 +1,10 @@
 function addRule() {
-
     var elements = document.getElementById("newRuleForm").elements;
     var obj ={};
     for(var i = 0 ; i < elements.length ; i++){
         var item = elements.item(i);
         obj[item.name] = item.value;
     }
-
     var line = document.createElement("div");
     line.className += "line";
     var rule = document.createElement("button");
@@ -128,3 +126,4 @@ function toggleDropdown(el) {
         content.style.display = "block";
       }
 }
+
