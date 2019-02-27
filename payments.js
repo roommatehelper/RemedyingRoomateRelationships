@@ -1,4 +1,4 @@
-var acc = "a";
+var acc = document.getElementById("profile");
 
 window.addEventListener('DOMContentLoaded',
   restorePayments()
@@ -7,9 +7,23 @@ window.addEventListener('DOMContentLoaded',
 function restorePayments() {
   var payments = JSON.parse(localStorage.getItem("payments"));
 
-  if(payments){
+  if(payments) {
     for(var i = 1; i < payments.length; i+= 2){
-      add($.parseHTML(payments[i])[0]);
+      var payment = $.parseHTML(payments[i])[0];
+      add(payment);
+
+      var user = payment.getElementsByClassName("user");
+      //remove buttons and change text if not logged in as person who made payment
+      if(user[0].innerHTML != acc.innerHTML) {
+
+        var desc = payment.getElementsByClassName("payees");
+          desc[0].innerHTML = "You owe " + user[0].innerHTML + " $";
+
+        var buttons = payment.getElementsByClassName("descButton");
+          for(var i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "none";
+          }
+      }
     }
   }
 }
@@ -40,14 +54,23 @@ function addPayment() {
   var line = document.createElement("div");
   line.className += "line";
   var payment = document.createElement("button");
+  var title = document.createElement("span");
+  title.className = "title"
+  title.innerHTML = obj["description"];
+  var user = document.createElement("span");
+  user.className = "user"
+  user.innerHTML = acc.innerHTML;
   payment.className += "ruleTitle";
   payment.type = "button";
-  payment.innerHTML += obj["description"] + " - Purchased by You";
-  line.appendChild(payment);
+  payment.appendChild(title);
+  payment.innerHTML += " - Purchased by ";
+  payment.appendChild(user);
 
   var etc = document.createElement("div");
   etc.className += "ruleDescription";
-  var desc = document.createElement("p");
+  var price = document.createElement("p");
+  var desc = document.createElement("span");
+  desc.className = "payees";
   var details = document.createElement("p");
   var del = document.createElement("input");
     del.setAttribute("type", "button");
@@ -58,10 +81,10 @@ function addPayment() {
     remind.setAttribute("type", "button");
     remind.setAttribute("class", "descButton remind");
     remind.setAttribute("value", "Remind");
-    remind.setAttribute("onclick", "sendRuleReminder()");
+    remind.setAttribute("onclick", "sendPaymentReminder()");
 
   var cost = parseFloat(obj["cost"]);
-  desc.innerHTML += "$" + String(cost) + "<br><br>"
+  price.innerHTML = "$" + String(cost) + "<br><br>";
 
   var list = [];
   var inputElements = document.getElementsByClassName("checklist");
@@ -71,19 +94,22 @@ function addPayment() {
   }
 
   for(var i = 0; i < list.length; i++){
-    desc.innerHTML += list[i] + " ";
+    desc.innerHTML += list[i];
     if(i == list.length - 2){
-      desc.innerHTML += ", and ";
+      desc.innerHTML += " and ";
     }
     else if(i != list.length - 1) {
       desc.innerHTML += ", ";
     }
   }
+  if(list.length == 1){desc.innerHTML += " owes you $";}
+  else{desc.innerHTML += " owe you $";}
+  price.appendChild(desc);
 
   var split = cost / (list.length + 1);
-  desc.innerHTML += "owe you $" + String(split.toFixed(2));
+  price.innerHTML += String(split.toFixed(2));
 
-  etc.appendChild(desc);
+  etc.appendChild(price);
   if(obj["details"] != "") {
     details.innerHTML += "Details: " + obj["details"];
     etc.appendChild(details);
@@ -91,7 +117,7 @@ function addPayment() {
 
   etc.appendChild(del);
   etc.appendChild(remind);
-
+  line.appendChild(payment);
   line.appendChild(etc);
 
   payment.setAttribute("onclick","toggleDropdown(this)");
@@ -129,14 +155,11 @@ function toggleDropdown(el) {
       }
 }
 
-function sendPaymentReminder() {
-
-}
-
 function deletePayment(el) {
   var payments = JSON.parse(localStorage.getItem("payments"));
-  var title = el.parentNode.previousSibling.innerHTML;
-  var index = payments.indexOf(title);
+  var title = el.parentNode.parentNode.getElementsByClassName("title")[0];
+
+  var index = payments.indexOf(title.innerHTML);
   payments.splice(index, 2);
   localStorage.setItem("payments", JSON.stringify(payments));
 
@@ -157,7 +180,7 @@ function sendPaymentReminder(){
   }, 5000)
 }
 
-//close popup when x is clicked
+//close reminder popup when x is clicked
 $('.closeAlert').click(function(){
     setTimeout(function(){
       $('.reminderSent').css('animation', 'none');

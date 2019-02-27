@@ -52,19 +52,19 @@ function checkPassword() {
 
 function signIn(form) {
   var signInEls = document.getElementsByClassName("signInInput");
-  if(signInEls[0].value == "a@a.a" && signInEls[1].value == "a")
+  if(signInEls[0].value.toLowerCase() == "daniella@gmail.com")
     form.action = "dashboard2.html";
   else {
     form.action = "dashboard.html"
   }
 }
 
-function restoreRules() {
-  var rules = JSON.parse(localStorage.getItem("rules"));
-
-  if(rules){
-    for(var i = 1; i < rules.length; i+= 2){
-      add($.parseHTML(rules[i])[0]);
-    }
-  }
+function toggleDropdown(el) {
+  el.classList.toggle("active");
+    var content = el.nextElementSibling;
+    if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
 }

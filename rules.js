@@ -112,16 +112,6 @@ function add(el) {
   closeModal();
 }
 
-function toggleDropdown(el) {
-  el.classList.toggle("active");
-    var content = el.nextElementSibling;
-    if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-}
-
 function tempAlert(msg,duration)
 {
  var el = document.createElement("div");

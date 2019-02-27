@@ -1,8 +1,10 @@
 <html>
 
 <head>
+  <title> Chores </title>
   <link rel="stylesheet" href="styles/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <span id="profile">Daniella</span>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
       <h1> Chores </h1>
     </div>
     <div class="headernav account">
-      <a href="#">My Account</a>
+      <a href="myAccount2.html">My Account</a>
       <a href="index.html">Log Out</a>
     </div>
   </header>
@@ -28,19 +30,19 @@
         <div class="list">
           <div class="line">
             <button class= "ruleTitle" id = "titleForSum" type="button"
-            onclick="toggleDropdown(this)">Take out the trash - You</button>
+            onclick="toggleDropdown(this)">Take out the trash - TK</button>
               <div class="ruleDescription">
                 <p>Sunday</p>
-                <input type="button" class="descButton remind" value="Done" onclick="deleteRule(this)"/>
+                <input type="button" class="descButton remind" value="Remind" onclick="sendChoreReminder(this)"/>
               </div>
           </div>
           <div class="line">
             <button class= "ruleTitle" type="button"
-            onclick="toggleDropdown(this)">Keep it quiet on the weekdays</button>
+            onclick="toggleDropdown(this)">Clean the Kitchen - Rabin</button>
             <div class="ruleDescription">
             <p>2019-02-12 to 2019-06-15<br><br>
             TK, David, Rabin, Daniella</p>
-            <input type="button" class="descButton remind" value="Remind" onclick="sendRuleReminder(this)"/>
+            <input type="button" class="descButton remind" value="Remind" onclick="sendChoreReminder(this)"/>
           </div>
           </div>
         </div>
@@ -49,14 +51,19 @@
     </form>
   </div>
 
+  <div class='reminderSent'>
+	  <span class="close closeAlert">&times;</span>
+      <p class='message'>Reminder sent!</p>
+  </div>
+
   <div class="registrationForm">
-    <form class="multiPageForm modal" id="newRuleForm">
+    <form class="multiPageForm modal" id="newChoreForm">
       <fieldset id= "start">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
-          <li class="active">Rule Description</li>
-          <li>Rule Schedule</li>
-          <li>Roommate Agreement</li>
+          <li class="active">Chore Description</li>
+          <li>Chore Schedule</li>
+          <li>Chore Assignment</li>
         </ul>
         <h2 class="formTitle">A Brief Description</h2>
         <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
@@ -67,13 +74,22 @@
       <fieldset class="end">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
-          <li class="active">Rule Description</li>
-          <li class="active">Rule Schedule</li>
-          <li>Roommate Agreement</li>
+          <li class="active">Chore Description</li>
+          <li class="active">Chore Schedule</li>
+          <li>Chore Assignment</li>
         </ul>
-        <h2 class="formTitle">Dates</h2>
-        <input type="date" class="date" name= "date1" required pattern=".*" />
-        <input type="date" class="date" name="date2" required pattern=".*" />
+        <h2 class="formTitle">Day of the Week</h2>
+        <input name="day" type="text" placeholder="Type day..." id="choreDay" onclick="show()" onkeyup="filterFunction()">
+        <div id="myDropdown" class="dropdown-content">
+            <div class="searchList" onclick="clickday(this)">Monday</div>
+            <div class="searchList" onclick="clickday(this)">Tuesday</div>
+            <div class="searchList" onclick="clickday(this)">Wednesday</div>
+            <div class="searchList" onclick="clickday(this)">Thursday</div>
+            <div class="searchList" onclick="clickday(this)">Friday</div>
+            <div class="searchList" onclick="clickday(this)">Saturday</div>
+            <div class="searchList" onclick="clickday(this)">Sunday</div>
+        </div>
+        <div class="checkitem"><input type="checkbox" name="alternates" value="Rotate"><p>Rotate Weekly?</p></div>
         <input type="button" class="formButton previous" value="Previous" />
         <input type="button" class="formButton forward" value="Next" />
       </fieldset>
@@ -81,24 +97,24 @@
       <fieldset class="end">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
-          <li class="active">Rule Description</li>
-          <li class="active">Rule Schedule</li>
-          <li class="active">Roommate Agreement</li>
+          <li class="active">Chore Description</li>
+          <li class="active">Chore Schedule</li>
+          <li class="active">Chore Assignment</li>
         </ul>
-        <h2 class="formTitle">Who Agrees?</h2>
+        <h2 class="formTitle">Who's Responsible?</h2>
           <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
         <input type="button" class="formButton previous" value="Previous"/>
-        <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
+        <input type="button" class="formButton submit" value="Submit" onclick="addChore()"/>
       </fieldset>
     </form>
     <div id="middle"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
-  <script src="rules.js"></script>
+  <script src="chores.js"></script>
 </body>
 
 </html>

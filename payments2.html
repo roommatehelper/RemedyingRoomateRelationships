@@ -1,8 +1,10 @@
 <html>
 
 <head>
+  <title> Payments </title>
   <link rel="stylesheet" href="styles/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <span id="profile">Daniella</span>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
       <h1> Payments </h1>
     </div>
     <div class="headernav account">
-      <a href="#">My Account</a>
+      <a href="myAccount2.html">My Account</a>
       <a href="index.html">Log Out</a>
     </div>
   </header>
@@ -28,12 +30,10 @@
         <div class="list">
           <div class="line">
             <button class= "ruleTitle" type="button"
-            onclick="toggleDropdown(this)">Blender - Purchased by You</button>
+            onclick="toggleDropdown(this)">Blender - Purchased by TK</button>
               <div class="ruleDescription">
                 <p>$150.00 <br><br>
-                  Daniella, TK, David, and Rabin owe you $30.00</p>
-                  <input type="button" class="descButton complete" value="Complete" onclick="deletePayment(this)"/>
-                  <input type="button" class="descButton remind" value="Remind" onclick="sendPaymentReminder(this)"/>
+                  You owe TK $30.00</p>
               </div>
           </div>
           <div class="line">
@@ -41,10 +41,12 @@
             onclick="toggleDropdown(this)">Coffee Table - Purchased by Daniella</button>
             <div class="ruleDescription">
               <p>$100.00 <br><br>
-                You owe Daniella $20.00</p>
+                TK, Rabin, and David owe you $25.00</p>
                 <p>
                   Details: From Ikea!
                 </p>
+                <input type="button" class="descButton complete" value="Complete" onclick="deletePayment(this)"/>
+                <input type="button" class="descButton remind" value="Remind" onclick="sendPaymentReminder(this)"/>
           </div>
           </div>
         </div>
@@ -80,11 +82,10 @@
           <li class="active">Payment Description</li>
           <li class="active">Roommate Selection</li>
         </ul>
-        <h2 class="formTitle">Who's Paying?</h2>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
+        <h2 class="formTitle">Split Cost With...</h2>
+        <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>TK</p></div>
         <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
         <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
         <input type="button" class="formButton previous" value="Previous" />
         <input type="button" class="formButton submit" value="Submit" onclick="addPayment()"/>
       </fieldset>

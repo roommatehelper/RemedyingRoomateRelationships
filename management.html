@@ -1,5 +1,6 @@
 <html>
 <head>
+  <title> My Room </title>
 <link rel="stylesheet" href="styles/style.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
    rel="stylesheet">
@@ -14,7 +15,7 @@
     <h1> My Room </h1>
   </div>
   <div class = "headernav account">
-    <a href="#">My Account</a>
+    <a href="myAccount.html">My Account</a>
     <a href="index.html">Log Out</a>
   </div>
   </header>
@@ -29,7 +30,9 @@
             onclick="toggleDropdown(this)">TK</button>
               <div class="ruleDescription">
                 <p>Joined: 02/12/2019</p>
+                <a href="myAccount.html">
                 <input type="button" class="descButton remind" value="Edit"/>
+              </a>
               </div>
           </div>
           <div class="line">
@@ -54,7 +57,8 @@
               </div>
           </div>
         </div>
-            <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
+        <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
+        <h3 class="subtitle"> Room Code: 34AC7</h3>
       </fieldset>
 
     </form>

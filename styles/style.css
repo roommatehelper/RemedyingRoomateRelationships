@@ -187,7 +187,7 @@ div.headernav {
   float: right;
 }
 
-.descButton.remind {
+.descButton.remind, .descButton.done {
   float: right;
   margin-top: 0;
   margin-right: 2%;
@@ -225,6 +225,9 @@ div.headernav {
 .descButton.complete {
   background: #0000de;
 }
+.descButton.done {
+	background: rgb(66, 201, 73);
+}
 
 .formButton:hover, .descButton:hover {
 	background: #2f2f2f;
@@ -240,6 +243,10 @@ div.headernav {
 
 .descButton.complete:hover {
   background: #000894;
+}
+
+.descButton.done:hover {
+	background: rgb(82, 223, 82);
 }
 
 .registrationForm fieldset {
@@ -363,6 +370,31 @@ input[type=checkbox]
   -webkit-transform: scale(2); /* Safari and Chrome */
   padding: 10px;
 }
+#choreDay:focus {border: 3px solid #ddd;}
+.dropdown {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  color: #777;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 2;
+  border-radius: 2px;
+  min-width: 300px;
+}
+
+.searchList{
+  padding: 12px 16px;
+}
+
+.searchList:hover {
+  background-color: #ddd;
+}
 
 .roommateList {
 	width: 100%;
@@ -412,7 +444,7 @@ input[type=checkbox]
     display: block;
 }
 
-.ruleTitle {
+.ruleTitle, .roomTitle {
   cursor: pointer;
   width: 100%;
   border: none;
@@ -423,7 +455,7 @@ input[type=checkbox]
 	font-size: 14pt;
 }
 
-button.active, .ruleTitle:hover {
+button.ruleTitle.active, button.ruleTitle:hover {
   background-color: #f1f1f1;
 }
 
@@ -536,3 +568,7 @@ button.active:after {
     padding: 5px;
     font-size: 12px;
   }
+
+#profile {
+  display: none;
+}
