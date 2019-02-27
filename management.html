@@ -18,5 +18,90 @@
     <a href="index.html">Log Out</a>
   </div>
   </header>
+
+
+<div class="rulesList">
+    <form class="infoList">
+      <fieldset action=#middle method="get">
+        <div class="list">
+          <div class="line">
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">Daniella</button>
+              <div class="ruleDescription">
+                <p>Joined: 02/12/2019</p>
+              </div>
+          </div>
+          <div class="line">
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">TK</button>
+              <div class="ruleDescription">
+                <p>Joined: 02/12/2019</p>
+              </div>
+          </div>
+          <div class="line">
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">David</button>
+              <div class="ruleDescription">
+                <p>Joined: 02/12/2019</p>
+              </div>
+          </div>
+          <div class="line">
+            <button class= "ruleTitle" type="button"
+            onclick="toggleDropdown(this)">Rabin</button>
+              <div class="ruleDescription">
+                <p>Joined: 02/26/2019</p>
+              </div>
+          </div>
+          <a href=#middle>
+            <input type="button" class="formButton add" value="Add"/>
+          </a>
+      </fieldset>
+      
+    </form>
+  </div>
+
+  <div class="registrationForm">
+    <form class="multiPageForm" id="newMemberForm">
+
+    <fieldset>
+        <ul id="progressbar">
+          <li >PERSONAL DETAILS</li>
+          <li>ACCOUNT DETAILS</li>
+          <li>ROOM DETAILS</li>
+        </ul>
+        <h2 class="formTitle">Add a New Roommate!</h2>
+        <h3 class="subtitle">Your roommate can also join at signup with the following code: 34AC7</h3>
+        <input type="button" class="formButton forward" value="Next" />
+    </fieldset>
+
+    <fieldset id= "start">
+        <ul id="progressbar">
+          <li class="active">Contact Information</li>
+          <li >Invite Message</li>
+        </ul>
+        <h2 class="formTitle">Add Member by Email</h2>
+        <input type="text"  placeholder="NAME@GMAIL.COM" name="memberemail" required pattern = "[A-Za-z0-9].*[@].*" />
+        <input type="text" placeholder="MEMBER NAME" name="membername" required pattern = "[A-Za-z].*"/>
+        <input type="button" class="formButton forward" value="Next"/>
+    </fieldset>
+
+    <fieldset id="end">
+        <ul id="progressbar">
+          <li class="active">Contact Information</li>
+          <li class="active">Invite Message</li>
+        </ul>
+        <h2 class="formTitle">Invite Message</h2>
+        <textarea name="details" name="invitemessage" placeholder="Message for roommate (optional)"></textarea>
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton submit" value="Submit" onclick="addMember()"/>
+    </fieldset>
+  </form>
+
+  <div id="middle"></div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="formMovement.js"></script>
+  <script src="edit.js"></script>
+
 </body>
 </html>
