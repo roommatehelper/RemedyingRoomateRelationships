@@ -1,4 +1,4 @@
-/* background */
+/*** Background ***/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html {
   scroll-behavior: smooth;
@@ -54,6 +54,10 @@ body {
 .material-icons {
   vertical-align: bottom;
   display: inline;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
 }
 
 /* header */
@@ -112,7 +116,7 @@ div.headernav {
   padding-top: 10%;
 }
 
-/* dashboard styles */
+/*** DASHBOARD ***/
 .dashTileWrap {
 	display: flex;
 	flex-flow: row wrap;
@@ -137,7 +141,7 @@ div.headernav {
 	background: rgba(0, 0, 0, 0.397);
 }
 
-/* forms */
+/** FORMS **/
 .signInInput {
 	height: 44px;
   border: none;
@@ -345,7 +349,7 @@ input[type=checkbox]
 	padding-left: 10px;
 }
 
-/*rules/chores/payments overview*/
+/*** rules/chores/payments overview ***/
 .line {
     width: 100%;
     margin: -1px;
@@ -419,4 +423,8 @@ button.active:after {
   margin-left: 2%;
   margin-right: 2%;
 	display: block;
+}
+
+#errormsg {
+  color: red;
 }
