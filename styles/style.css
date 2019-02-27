@@ -173,18 +173,6 @@ div.headernav {
 	float: left;
 }
 
-.buttonToRemind {
-	width: 100px;
-	background: rgb(92, 92, 92);
-	font-weight: bold;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	margin: 1%;
-	transition: background .4s ease-in-out;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-}
-
 .formButton, .descButton {
 	width: 100px;
 	background: rgb(92, 92, 92);
@@ -556,30 +544,6 @@ button.active:after {
   text-decoration: none;
   cursor: pointer;
 }
-
-/* alert */
-.reminderSent{
-  display: none;
-  position: fixed;
-  width: 20%;
-  left:40%;
-  bottom:0%;
-  padding: 10px;
-  box-sizing: border-box;
-  border-top-left-radius:5px;
-  border-top-right-radius: 5px;
-  background-color: #e8f7ed;
-  border: 1px solid #30b661;
-  color: #157f3c;
-  text-align: center;
-  letter-spacing: 1px;
-
-}
-
-.message{
-    padding: 5px;
-    font-size: 12px;
-  }
 
 #profile {
   display: none;
