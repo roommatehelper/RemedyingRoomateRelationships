@@ -66,13 +66,3 @@ function closeModal() {
   document.getElementsByClassName("modal")[0].style.display = "none";
   document.getElementById("newRuleForm").reset();
 }
-
-function removeMember(el) {
-  /*var payments = JSON.parse(localStorage.getItem("payments"));
-  var title = el.parentNode.previousSibling.innerHTML;
-  var index = payments.indexOf(title);
-  payments.splice(index, 2);
-  localStorage.setItem("payments", JSON.stringify(payments));*/
-
-  el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
-}
