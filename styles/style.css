@@ -170,6 +170,18 @@ div.headernav {
 	float: left;
 }
 
+.buttonToRemind {
+	width: 100px;
+	background: rgb(92, 92, 92);
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 1%;
+	transition: background .4s ease-in-out;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
 .formButton {
 	width: 100px;
 	background: rgb(92, 92, 92);
