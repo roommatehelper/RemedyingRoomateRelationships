@@ -31,22 +31,6 @@ $(document).ready(function () {
     });
 });
 
-function signIn() {
-  var input = document.getElementsByClassName("signInInput");
-  var valid = true;
-  for (var i = 0; i < input.length; i++){
-    if(!input[i].checkValidity()){
-      valid = false;
-      input[i].classList.add("error");
-    }
-    else {
-      input[i].classList.remove("error");
-    }
-  }
-  if(valid)
-    changeWindow();
-}
-
 function checkPassword() {
     var password = document.getElementById("p1");
     var secondPassword = document.getElementById("p2");
@@ -66,6 +50,21 @@ function checkPassword() {
     }
 }
 
-function changeWindow() {
-    window.location="dashboard.html";
+function signIn(form) {
+  var signInEls = document.getElementsByClassName("signInInput");
+  if(signInEls[0].value.toLowerCase() == "daniella@gmail.com")
+    form.action = "dashboard2.html";
+  else {
+    form.action = "dashboard.html"
+  }
+}
+
+function toggleDropdown(el) {
+  el.classList.toggle("active");
+    var content = el.nextElementSibling;
+    if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
 }

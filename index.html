@@ -10,9 +10,12 @@
   <p class="indexHeader">The Room</p>
   <div class="index">
     <p class="description">Already have an account?</p>
+
+    <form name="login" onSubmit="signIn(this)">
     <input type="email" class="signInInput" placeholder="NAME@GMAIL.COM" required pattern = "[A-Za-z0-9].*[@].*" />
     <input type="password" class="signInInput" placeholder="PASSWORD" required pattern = ".*"/>
-    <input type="submit" class="formButton large" value="SIGN IN" onclick="signIn()">
+    <input type="submit" class="formButton large" value="SIGN IN">
+    </form>
 
     <div class="creation">
       <p class="description">Want to create an account?</p>
@@ -87,6 +90,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
+  <script src="edit.js"></script>
 </body>
 
 </html>
