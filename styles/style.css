@@ -1,4 +1,4 @@
-/* background */
+listwrap/*** Background ***/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html {
   scroll-behavior: smooth;
@@ -54,6 +54,10 @@ body {
 .material-icons {
   vertical-align: bottom;
   display: inline;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
 }
 
 /* header */
@@ -112,7 +116,7 @@ div.headernav {
   padding-top: 10%;
 }
 
-/* dashboard styles */
+/*** DASHBOARD ***/
 .dashTileWrap {
 	display: flex;
 	flex-flow: row wrap;
@@ -137,7 +141,7 @@ div.headernav {
 	background: rgba(0, 0, 0, 0.397);
 }
 
-/* forms */
+/** FORMS **/
 .signInInput {
 	height: 44px;
   border: none;
@@ -146,7 +150,6 @@ div.headernav {
   width: 100%;
   margin: 2%;
   background: rgb(255, 255, 255);
-  font-family: montserrat;
   color: #333;
   letter-spacing: 2px;
   text-indent: 5%;
@@ -161,7 +164,7 @@ div.headernav {
 
 .multiPageForm {
 	width: 65%;
-	margin: 5% auto;
+	margin: 0 auto;
 }
 
 .multiPageForm input[type=checkbox]{
@@ -170,6 +173,7 @@ div.headernav {
 	float: left;
 }
 
+/*
 .buttonToRemind {
 	width: 100px;
 	background: rgb(92, 92, 92);
@@ -180,18 +184,43 @@ div.headernav {
 	margin: 1%;
 	transition: background .4s ease-in-out;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-}
+}*/
 
-.formButton {
+.formButton, .descButton {
 	width: 100px;
 	background: rgb(92, 92, 92);
 	font-weight: bold;
 	color: white;
 	border: none;
 	border-radius: 5px;
-	margin: 1%;
 	transition: background .4s ease-in-out;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+.formButton.forward {
+  float: right;
+}
+
+.descButton.remind, .descButton.done {
+  float: right;
+  margin-top: 0;
+  margin-right: 2%;
+}
+
+.formButton.previous {
+  float: left;
+}
+
+.descButton.delete, .descButton.complete {
+  float: left;
+  margin-top: 0;
+  margin-left: 2%;
+}
+
+.formButton.submit {
+	border: 10px;
+	background: rgb(66, 201, 73);
+	font-weight: bold;
+  float: right;
 }
 
 .formButton.large {
@@ -199,17 +228,37 @@ div.headernav {
   height: 50px;
 }
 
-.formButton:hover {
+.descButton {
+  box-shadow: none;
+}
+.descButton.delete {
+  background: #CD2626;
+}
+
+.descButton.complete {
+  background: #0000de;
+}
+.descButton.done {
+	background: rgb(66, 201, 73);
+}
+
+.formButton:hover, .descButton:hover {
 	background: #2f2f2f;
 }
 
-.formButton.submit {
-	border: 10px;
-	background: rgb(66, 201, 73);
-	font-weight: bold;
+.formButton.submit:hover {
+	background: rgb(82, 223, 82);
 }
 
-.formButton.submit:hover {
+.descButton.delete:hover {
+	background: firebrick;
+}
+
+.descButton.complete:hover {
+  background: #000894;
+}
+
+.descButton.done:hover {
 	background: rgb(82, 223, 82);
 }
 
@@ -229,13 +278,24 @@ div.headernav {
 	display: none;
 }
 
+.registrationForm.modal fieldset {
+	background:rgb(255, 255, 255);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 50%;
+	margin: 0 10%;
+	position: relative;
+}
+
 input, textarea{
 	padding: 15px;
 	border: 1px solid rgb(172, 172, 172);
 	border-radius: 5px;
 	margin: 2% auto;
 	width: 100%;
-	font-family: montserrat;
 	letter-spacing: 1.5px;
 	color: #2C3E50;
 	font-size: 12px;
@@ -323,6 +383,31 @@ input[type=checkbox]
   -webkit-transform: scale(2); /* Safari and Chrome */
   padding: 10px;
 }
+#choreDay:focus {border: 3px solid #ddd;}
+.dropdown {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  color: #777;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 2;
+  border-radius: 2px;
+  min-width: 300px;
+}
+
+.searchList{
+  padding: 12px 16px;
+}
+
+.searchList:hover {
+  background-color: #ddd;
+}
 
 .roommateList {
 	width: 100%;
@@ -343,7 +428,6 @@ input[type=checkbox]
 }
 
 .checkitem p , .infoList p{
-	font-family: montserrat;
 	letter-spacing: 1.5px;
 	color: #2C3E50;
   font-size: 12px;
@@ -360,7 +444,7 @@ input[type=checkbox]
 	padding-left: 10px;
 }
 
-/*rules/chores/payments overview*/
+/*** rules/chores/payments overview ***/
 .line {
     width: 100%;
     margin: -1px;
@@ -373,7 +457,7 @@ input[type=checkbox]
     display: block;
 }
 
-.ruleTitle {
+.ruleTitle, .roomTitle {
   cursor: pointer;
   width: 100%;
   border: none;
@@ -381,11 +465,10 @@ input[type=checkbox]
 	color: #666;
 	padding: 20px;
 	text-align: left;
-	font-family: Montserrat, sans-serif;
 	font-size: 14pt;
 }
 
-button.active, .ruleTitle:hover {
+button.ruleTitle.active, button.ruleTitle:hover {
   background-color: #f1f1f1;
 }
 
@@ -396,17 +479,17 @@ button.active, .ruleTitle:hover {
 }
 
 button.ruleTitle:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
+  content: '\22EF';
+  font-size: 20px;
   float: right;
   margin-left: 5px;
 }
 
 button.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  content: "\2796";
 }
 
-.rulesList {
+.listwrap {
 	padding-top: 1%;
 	margin: 5%;
 	position: relative;
@@ -435,4 +518,46 @@ button.active:after {
   margin-left: 2%;
   margin-right: 2%;
 	display: block;
+}
+
+#errormsg {
+  color: red;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+.modal fieldset{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#profile {
+  display: none;
 }
