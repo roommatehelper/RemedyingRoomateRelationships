@@ -133,7 +133,24 @@ function deleteRule(el) {
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
 }
 
+//REMINDERS
 function sendRuleReminder(){
-  document.cookie = "username=John Doe;path=/";
-  alert("A reminder was sent!");
+
+  //send rule to other user's dashboard
+
+  $('.reminderSent').css('display', 'block');
+
+  //close popup after 5 seconds
+  setTimeout(function(){
+    $('.reminderSent').css('animation', 'none');
+		$('.reminderSent').css('display', 'none');
+  }, 5000)
 }
+
+//close popup when x is clicked
+$('.closeAlert').click(function(){
+    setTimeout(function(){
+      $('.reminderSent').css('animation', 'none');
+		  $('.reminderSent').css('display', 'none');
+    }, 100);
+});
