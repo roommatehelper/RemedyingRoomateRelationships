@@ -3,5 +3,6 @@ $(window).on('load', function() {
  var user = document.getElementById("profile");
  if(title) {
    title.value = user.innerHTML;
+   title.setAttribute('readonly', true);
  }
 });
