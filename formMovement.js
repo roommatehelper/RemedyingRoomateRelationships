@@ -46,7 +46,6 @@ function checkPassword() {
     }
     else {
       secondPassword.setCustomValidity('');
-      error.parentNode.removeChild(error);
     }
 }
 
@@ -67,4 +66,7 @@ function toggleDropdown(el) {
       } else {
         content.style.display = "block";
       }
+}
+function changeWindow() {
+  window.location = "dashboard.html";
 }

@@ -3,6 +3,7 @@
 <head>
   <title> Payments </title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <span id="profile">TK</span>
 </head>
@@ -19,7 +20,21 @@
       <h1> Payments </h1>
     </div>
     <div class="headernav account">
-      <a href="myAccount.html">My Account</a>
+      <button id="myBtn">
+        <i class="fas fa-info-circle" id="help"></i>
+      </button>
+      <div id="myModal" class="popupModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>Functionality</h1>
+          <ul>
+            <li class="normalText">To add a purchase you would like to split with your roommate(s), hit the add button.</li>
+            <li class="normalText">To look at the details of a recent transaction, click on transaction (expand by hitting the three dots).</li>
+            <li class = "normalText">To pay for an item you split, hit the complete button. To remind your roomate(s) to pay you back, hit the remind button</li>
+          </ul>
+        </div>
+      </div>
+      <a href="myAccount2.html">My Account</a>
       <a href="index.html">Log Out</a>
     </div>
   </header>
@@ -89,6 +104,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
   <script src="payments.js"></script>
+  <script src="help.js"></script>
 </body>
 
 </html>

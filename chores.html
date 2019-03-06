@@ -3,6 +3,7 @@
 <head>
   <title> Chore </title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <span id="profile">TK</span>
 </head>
@@ -19,6 +20,20 @@
       <h1> Chores </h1>
     </div>
     <div class="headernav account">
+      <button id="myBtn">
+        <i class="fas fa-info-circle" id="help"></i>
+      </button>
+      <div id="myModal" class="popupModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>Functionality</h1>
+          <ul>
+            <li class="normalText">Click on the add button to create a new household chore.</li>
+            <li class="normalText">To look at the details of present chores, click on chore (expand by hitting the three dots).</li>
+            <li class="normalText">To complete a chore or remind a roommate, expand the chore. You can complete a chore only if it was assigned to you. Similarly, you can send a reminder only if the chore wasn't assigned to you.</li>
+          </ul>
+        </div>
+      </div>
       <a href="myAccount.html">My Account</a>
       <a href="index.html">Log Out</a>
     </div>
@@ -110,6 +125,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
   <script src="chores.js"></script>
+  <script src="help.js"></script>
 </body>
 
 </html>
