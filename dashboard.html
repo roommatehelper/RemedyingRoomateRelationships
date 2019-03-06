@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<body class="dasboard">
   <header>
     <div class="headernav">
       <p>Your Room Code: 34AC7</p>
@@ -63,6 +63,13 @@
       </h2>
     </a>
   </div>
+
+  <button class="descButton chatIcon" onclick="toggleChat()"><i class="material-icons">chat</i></button>
+  <div id="chatroom">
+    <button class="descButton closeIcon" onclick="toggleChat()">&times;</button>
+    <iframe class="chatbox" src='https://minnit.chat/Room?embed&mobile' allowTransparency='true'></iframe>
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
   <script src="summaryUpdate.js"></script>

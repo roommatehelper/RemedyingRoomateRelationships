@@ -39,9 +39,8 @@
     </div>
   </header>
 
-  <div class="listwrap">
-    <form class="infoList">
-      <fieldset action=#middle method="get">
+  <section class="listwrap">
+    <div class="infoList">
         <div class="list">
           <div class="line">
             <button class= "ruleTitle" id = "titleForSum" type="button"
@@ -55,15 +54,19 @@
             <button class= "ruleTitle" type="button"
             onclick="toggleDropdown(this)">Clean the Kitchen - Rabin</button>
             <div class="ruleDescription">
-            <p>2019-02-12 to 2019-06-15<br><br>
-            TK, David, Rabin, Daniella</p>
+            <p>Monday</p>
             <input type="button" class="descButton remind" value="Remind" onclick="sendChoreReminder(this)"/>
           </div>
           </div>
         </div>
         <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
-      </fieldset>
-    </form>
+    </div>
+  </section>
+
+  <button class="descButton chatIcon" onclick="toggleChat()"><i class="material-icons">chat</i></button>
+  <div id="chatroom">
+    <button class="descButton closeIcon" onclick="toggleChat()">&times;</button>
+    <iframe class="chatbox" src='https://minnit.chat/Room?embed&mobile' allowTransparency='true'></iframe>
   </div>
 
   <div class="registrationForm">

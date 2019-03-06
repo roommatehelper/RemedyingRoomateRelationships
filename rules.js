@@ -47,7 +47,6 @@ function addRule() {
 
     var etc = document.createElement("div");
     etc.className += "ruleDescription";
-    var desc = document.createElement("p");
     var details = document.createElement("p");
     var del = document.createElement("input");
       del.setAttribute("type", "button");
@@ -59,23 +58,6 @@ function addRule() {
       remind.setAttribute("class", "descButton remind");
       remind.setAttribute("value", "Remind");
 
-    desc.innerHTML += obj["date1"] + " to " + obj["date2"] + "<br><br>";
-
-    var list = [];
-    var inputElements = document.getElementsByClassName("checklist");
-    for(var i=0; inputElements[i]; i++){
-          if(inputElements[i].checked)
-               list.push(inputElements[i].value);
-    }
-
-    for(var i = 0; i < list.length; i++){
-      desc.innerHTML += list[i];
-      if(i != list.length - 1) {
-        desc.innerHTML += ", ";
-      }
-    }
-
-    etc.appendChild(desc);
     if(obj["details"] != "") {
       details.innerHTML += "Details: " + obj["details"];
       etc.appendChild(details);

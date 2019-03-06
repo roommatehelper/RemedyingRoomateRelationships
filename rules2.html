@@ -39,9 +39,8 @@
     </div>
   </header>
 
-  <div class="listwrap">
-    <form class="infoList">
-      <fieldset action=#middle method="get">
+  <section class="listwrap">
+    <div class="infoList">
         <div class="list">
           <div class="line">
             <button class= "ruleTitle" id = "titleForSum" type="button"
@@ -61,15 +60,19 @@
             <p>2019-02-12 to 2019-06-15<br><br>
             TK, David, Rabin, Daniella</p>
             <p>Don't be too loud after 12!</p>
-
             <input type="button" class="descButton delete" value="Delete" onclick="deleteRule(this)"/>
             <input type="button" class="descButton remind" id="remindButton2" value="Remind"/>
           </div>
           </div>
         </div>
         <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
-      </fieldset>
-    </form>
+    </div>
+  </section>
+
+  <button class="descButton chatIcon" onclick="toggleChat()"><i class="material-icons">chat</i></button>
+  <div id="chatroom">
+    <button class="descButton closeIcon" onclick="toggleChat()">&times;</button>
+    <iframe class="chatbox" src='https://minnit.chat/Room?embed&mobile' allowTransparency='true'></iframe>
   </div>
 
   <div class="registrationForm">
@@ -78,12 +81,11 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
-          <li>Rule Schedule</li>
           <li>Roommate Agreement</li>
         </ul>
         <h2 class="formTitle">A Brief Description</h2>
         <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
-        <textarea name="details" placeholder="Details (optional)"></textarea>
+        <textarea name="details" placeholder="Details" required></textarea>
         <input type="button" class="formButton forward" value="Next"/>
       </fieldset>
 
@@ -91,24 +93,10 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
-          <li class="active">Rule Schedule</li>
-          <li>Roommate Agreement</li>
-        </ul>
-        <h2 class="formTitle">Dates</h2>
-        <input type="date" class="date" name= "date1" required pattern=".*" />
-        <input type="date" class="date" name="date2" required pattern=".*" />
-        <input type="button" class="formButton previous" value="Previous" />
-        <input type="button" class="formButton forward" value="Next" />
-      </fieldset>
-
-      <fieldset class="end">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <ul id="progressbar">
-          <li class="active">Rule Description</li>
-          <li class="active">Rule Schedule</li>
           <li class="active">Roommate Agreement</li>
         </ul>
         <h2 class="formTitle">Who Agrees?</h2>
+        <h4 class="subtitle">All selected roommates will be notified about the new rule.</h4>
           <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
           <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
