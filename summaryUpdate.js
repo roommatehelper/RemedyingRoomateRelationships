@@ -4,8 +4,8 @@ $(function(){
     var z = getCookieValue("pay")
     
     $("#ruleSum").text(x);
-    $("choreSum").text(y);
-    $("paySum").text(z);
+    $("#choreSum").text(y);
+    $("#paySum").text(z);
 });
 
 
