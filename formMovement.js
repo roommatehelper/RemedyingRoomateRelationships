@@ -9,7 +9,7 @@ $(document).ready(function () {
         //if all fields are valid, continue, else error
         var fields = current.children();
         for (var i = 0; i < fields.length; i++) {
-          if(fields[i].localName == "input" && fields[i].type != "button")
+          if(fields[i].localName == "input" && fields[i].type != "button" || fields[i].type == "textarea")
             if(!fields[i].checkValidity()) {
               valid = false;
               fields[i].classList.add("error");
@@ -69,4 +69,13 @@ function toggleDropdown(el) {
 }
 function changeWindow() {
   window.location = "dashboard.html";
+}
+
+function toggleChat() {
+  var chatbox = document.getElementById("chatroom");
+  if (chatbox.style.display === "block") {
+      chatbox.style.display = "none";
+    } else {
+      chatbox.style.display = "block";
+    }
 }

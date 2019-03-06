@@ -16,6 +16,11 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+.dashboard {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -245,19 +250,6 @@ div.headernav {
 	float: left;
 }
 
-/*
-.buttonToRemind {
-	width: 100px;
-	background: rgb(92, 92, 92);
-	font-weight: bold;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	margin: 1%;
-	transition: background .4s ease-in-out;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-}*/
-
 .formButton, .descButton {
 	width: 100px;
 	background: rgb(92, 92, 92);
@@ -390,11 +382,11 @@ input:active {
 	border: 1px solid rgb(172, 172, 172);
 }
 
-input.error {
+input.error, textarea.error {
   border: 1px solid red;
 }
 
-input.error::placeholder {
+input.error::placeholder, textarea.error::placeholder {
   color: red;
   font-style: italic;
 }
@@ -565,19 +557,14 @@ button.active:after {
 }
 
 .infoList {
-    width: 80%;
-    margin: auto;
-}
-
-.infoList fieldset {
-    background:rgb(255, 255, 255);
-	border: none;
-	border-radius: 10px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	box-sizing: border-box;
-    width: 100%;
-    display: flex;
+  width: 80%;
+  margin: auto;
+  background:rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  box-sizing: border-box;
 }
 
 .infoList p {
@@ -625,6 +612,63 @@ button.active:after {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.chatIcon {
+    float: right;
+    position: fixed;
+    bottom: 25px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+    font-size: 40px;
+    color: #fff;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+.closeIcon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+}
+
+#chatroom {
+    float: right;
+    position: fixed;
+    bottom: 25px;
+    right: 50px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    box-sizing: border-box;
+    height: 500px;
+    width: 350px;
+    display: none;
+}
+
+.chatbox {
+    border: none;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+#chat {
+  border: none !important;
+}
+
+.descButton:focus, .formButton:focus, .remindButton:focus, input:focus, textarea:focus {
+  outline:0;
 }
 
 #profile {
