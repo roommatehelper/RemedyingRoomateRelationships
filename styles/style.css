@@ -84,7 +84,7 @@ header a {
 }
 
 .title {
-  width: 50%;
+  width: 45%;
 }
 
 div.headernav {
@@ -114,6 +114,78 @@ div.headernav {
 
 .index .creation {
   padding-top: 10%;
+}
+#middle {
+	padding-bottom: 15%;
+}
+
+/* The Modal (background) */
+#myBtn {
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+	margin-bottom: 3%;
+	margin-right: 5%;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fffffff1;
+	color: rgb(83, 83, 83);
+	margin: auto; /* 15% from the top and centered */
+  padding: 20px;
+	width: 50%; /* Could be more or less, depending on screen size */
+	border: none;
+	border-radius: 5px;
+}
+
+#help {
+	font-size: 25px;
+	color: rgb(255, 255, 255);
+}
+
+/* The Close Button */
+.close {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.normalText {
+	text-align: left;
+	line-height: 28px;
+	font-size: 17px;
+	font-weight: 100;
+	word-spacing: 1px;
+	letter-spacing: .5px;
+}
+.subtitleModal {
+	font-style: italic;
+	font-weight: bold;
+}
+.popupModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
 /*** DASHBOARD ***/
@@ -365,17 +437,16 @@ input.error::placeholder {
 }
 
 .createNewRoom {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
-	margin: 2%;
-	margin-bottom: 3%;
+	text-align: center;
+	margin-left: 35%;
+	margin-right: 50%;
+	width: 100%;
 }
 
 .checkHolder {
 	width: 5%;
-	margin-left: 25%;
-	margin-right: 3%;
-	margin-top: 1%;
 }
 
 input[type=checkbox]
@@ -423,8 +494,6 @@ input[type=checkbox]
 	font-weight: 10px;
 	font-size: 15px;
 	color: #666;
-	margin-bottom: 10px;
-	text-align: center;
 }
 
 .checkitem p , .infoList p{
