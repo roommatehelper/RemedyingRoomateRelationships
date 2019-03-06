@@ -614,62 +614,13 @@ button.active:after {
   cursor: pointer;
 }
 
-.chatIcon {
-    float: right;
-    position: fixed;
-    bottom: 25px;
-    right: 50px;
-    width: 60px;
-    height: 60px;
-    overflow: hidden;
-    border-radius: 50%;
-    display: block;
-    font-size: 40px;
-    color: #fff;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+/*for the comment box */
+
+#HCB_comment_box h3 {
+  color: #666;
 }
 
-.closeIcon {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-}
-
-#chatroom {
-    float: right;
-    position: fixed;
-    bottom: 25px;
-    right: 50px;
-    background: white;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 10px;
-    box-sizing: border-box;
-    height: 500px;
-    width: 350px;
-    display: none;
-}
-
-.chatbox {
-    border: none;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-}
-
-#chat {
-  border: none !important;
-}
-
-.descButton:focus, .formButton:focus, .remindButton:focus, input:focus, textarea:focus {
-  outline:0;
-}
+.home-desc, #hcb_msg, #HCB_comment_box a, #hcb_form div a {display: none;}
 
 #profile {
   display: none;

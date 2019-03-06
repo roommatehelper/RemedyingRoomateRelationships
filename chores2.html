@@ -63,11 +63,13 @@
     </div>
   </section>
 
-  <button class="descButton chatIcon" onclick="toggleChat()"><i class="material-icons">chat</i></button>
-  <div id="chatroom">
-    <button class="descButton closeIcon" onclick="toggleChat()">&times;</button>
-    <iframe class="chatbox" src='https://minnit.chat/Room?embed&mobile' allowTransparency='true'></iframe>
-  </div>
+  <section class="listwrap">
+    <!-- begin wwww.htmlcommentbox.com -->
+    <div class="infoList" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+    <script type="text/javascript" id="hcb"> if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24ir7VqEa89iHjhLOQ2WMcq0"+"&opts=16862&num=10&ts=1551911119499");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+    <!-- end www.htmlcommentbox.com -->
+  </section>
 
   <div class="registrationForm">
     <form class="multiPageForm modal" id="newChoreForm">
@@ -129,6 +131,7 @@
   <script src="formMovement.js"></script>
   <script src="chores.js"></script>
   <script src="help.js"></script>
+  <script src="comments.js"></script>
 </body>
 
 </html>

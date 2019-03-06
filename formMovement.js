@@ -70,12 +70,3 @@ function toggleDropdown(el) {
 function changeWindow() {
   window.location = "dashboard.html";
 }
-
-function toggleChat() {
-  var chatbox = document.getElementById("chatroom");
-  if (chatbox.style.display === "block") {
-      chatbox.style.display = "none";
-    } else {
-      chatbox.style.display = "block";
-    }
-}
