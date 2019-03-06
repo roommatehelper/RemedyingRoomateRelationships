@@ -616,11 +616,15 @@ button.active:after {
 
 /*for the comment box */
 
-#HCB_comment_box h3 {
-  color: #666;
+#HCB_comment_box {
+    color: #333;
 }
 
-.home-desc, #hcb_msg, #HCB_comment_box a, #hcb_form div a {display: none;}
+#comments_list {
+  text-align: left;
+}
+
+.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar, #hcb_form div a, #HCB_comment_tb {display: none;}
 
 #profile {
   display: none;
