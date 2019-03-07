@@ -165,25 +165,3 @@ function deletePayment(el) {
 
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
 }
-
-//REMINDERS
-function sendPaymentReminder(){
-
-  //send payment title and amt owed to other user's dashboard
-
-  $('.reminderSent').css('display', 'block');
-
-  //close popup after 5 seconds
-  setTimeout(function(){
-    $('.reminderSent').css('animation', 'none');
-		$('.reminderSent').css('display', 'none');
-  }, 5000)
-}
-
-//close reminder popup when x is clicked
-$('.closeAlert').click(function(){
-    setTimeout(function(){
-      $('.reminderSent').css('animation', 'none');
-		  $('.reminderSent').css('display', 'none');
-    }, 100);
-});
