@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded',
 function restoreRules() {
   var rules = JSON.parse(localStorage.getItem("rules"));
 
-  if(rules){
+  if(rules) {
     for(var i = 1; i < rules.length; i+= 2){
       add($.parseHTML(rules[i])[0]);
     }

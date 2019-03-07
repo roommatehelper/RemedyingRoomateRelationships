@@ -100,7 +100,6 @@ function addChore() {
     if(responsible == -1) {
       remind.setAttribute("class", "descButton remind");
       remind.setAttribute("value", "Remind");
-      remind.setAttribute("onclick", "sendChoreReminder()");
     }
     else {
       remind.setAttribute("class", "descButton done");
@@ -167,20 +166,6 @@ function deleteChore(el) {
   localStorage.setItem('chores', JSON.stringify(chores));
 
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
-}
-
-//REMINDERS
-function sendChoreReminder(){
-
-  //send chore to other user's dashboard
-
-  $('.reminderSent').css('display', 'block');
-
-  //close popup after 5 seconds
-  setTimeout(function(){
-    $('.reminderSent').css('animation', 'none');
-		$('.reminderSent').css('display', 'none');
-  }, 5000)
 }
 
 //close popup when x is clicked
