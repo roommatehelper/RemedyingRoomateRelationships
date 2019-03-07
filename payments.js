@@ -81,7 +81,6 @@ function addPayment() {
     remind.setAttribute("type", "button");
     remind.setAttribute("class", "descButton remind");
     remind.setAttribute("value", "Remind");
-    remind.setAttribute("onclick", "sendPaymentReminder()");
 
   var cost = parseFloat(obj["cost"]);
   price.innerHTML = "$" + String(cost) + "<br><br>";

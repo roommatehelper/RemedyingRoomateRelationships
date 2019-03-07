@@ -100,7 +100,6 @@ function addChore() {
     if(responsible == -1) {
       remind.setAttribute("class", "descButton remind");
       remind.setAttribute("value", "Remind");
-      remind.setAttribute("onclick", "sendChoreReminder()");
     }
     else {
       remind.setAttribute("class", "descButton done");
@@ -168,7 +167,6 @@ function deleteChore(el) {
 
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
 }
-
 
 //close popup when x is clicked
 $('.closeAlert').click(function(){
