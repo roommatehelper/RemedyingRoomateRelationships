@@ -259,6 +259,7 @@ div.headernav {
 	border-radius: 5px;
 	transition: background .4s ease-in-out;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 .formButton.forward {
   float: right;
@@ -620,11 +621,15 @@ button.active:after {
     color: #333;
 }
 
+input#hcb_form_name {
+    cursor: default;
+}
+
 #comments_list {
   text-align: left;
 }
 
-.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar, #hcb_form div a, #HCB_comment_tb {display: none;}
+.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar, #hcb_form div a, #hcb-comment-tb {display: none;}
 
 #profile {
   display: none;
