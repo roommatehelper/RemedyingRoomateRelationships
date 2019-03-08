@@ -40,11 +40,11 @@ function closeModal() {
     end[i].style.display = "none";
 
   document.getElementsByClassName("modal")[0].style.display = "none";
-  document.getElementById("newPaymentForm").reset();
+  document.getElementById("newItemForm").reset();
 }
 
 function addPayment() {
-  var elements = document.getElementById("newPaymentForm").elements;
+  var elements = document.getElementById("newItemForm").elements;
   var obj ={};
   for(var i = 0 ; i < elements.length ; i++){
       var item = elements.item(i);
@@ -72,15 +72,20 @@ function addPayment() {
   var desc = document.createElement("span");
   desc.className = "payees";
   var details = document.createElement("p");
-  var del = document.createElement("input");
-    del.setAttribute("type", "button");
-    del.setAttribute("class", "descButton complete");
-    del.setAttribute("value", "Complete");
-    del.setAttribute("onclick", "deletePayment(this)");
+  var complete = document.createElement("input");
+    complete.setAttribute("type", "button");
+    complete.setAttribute("class", "descButton complete");
+    complete.setAttribute("value", "Complete");
+    complete.setAttribute("onclick", "deletePayment(this)");
   var remind = document.createElement("input");
     remind.setAttribute("type", "button");
     remind.setAttribute("class", "descButton remind");
     remind.setAttribute("value", "Remind");
+  var del = document.createElement("input");
+    del.setAttribute("type", "button");
+    del.setAttribute("class", "delete");
+    del.setAttribute("value", "Delete");
+    del.setAttribute("onclick", "deleteFunction(this)");
 
   var cost = parseFloat(obj["cost"]);
   price.innerHTML = "$" + String(cost) + "<br><br>";
@@ -114,8 +119,10 @@ function addPayment() {
     etc.appendChild(details);
   }
 
+  etc.appendChild(del);
+
   payment.appendChild(remind);
-  payment.appendChild(del);
+  payment.appendChild(complete);
   line.appendChild(payment);
   line.appendChild(etc);
 
@@ -144,23 +151,21 @@ function add(el) {
   closeModal();
 }
 
-function toggleDropdown(el) {
-  el.classList.toggle("active");
-    var content = el.nextElementSibling;
-    if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
+function deleteFunction(el) {
+  var del = window.confirm("Are you sure you want to delete this payment? This cannot be undone.");
+  if(del)
+    deletePayment(el);
 }
 
 function deletePayment(el) {
   var payments = JSON.parse(localStorage.getItem("payments"));
-  var title = el.parentNode.parentNode.getElementsByClassName("title")[0];
-
-  var index = payments.indexOf(title.innerHTML);
-  payments.splice(index, 2);
-  localStorage.setItem("payments", JSON.stringify(payments));
+  if(payments) {
+    var title = el.parentNode.parentNode.getElementsByClassName("title")[0];
+    var index = payments.indexOf(title.innerHTML);
+    if(index != -1)
+      payments.splice(index, 2);
+    localStorage.setItem("payments", JSON.stringify(payments));
+  }
 
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
 }

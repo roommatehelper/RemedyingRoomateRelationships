@@ -46,11 +46,11 @@ function closeModal() {
     end[i].style.display = "none";
 
   document.getElementsByClassName("modal")[0].style.display = "none";
-  document.getElementById("newChoreForm").reset();
+  document.getElementById("newItemForm").reset();
 }
 
 function addChore() {
-    var elements = document.getElementById("newChoreForm").elements;
+    var elements = document.getElementById("newItemForm").elements;
     var obj ={};
     for(var i = 0 ; i < elements.length ; i++){
         var item = elements.item(i);
@@ -70,16 +70,25 @@ function addChore() {
                list.push(inputElements[i].value);
     }
 
+    var roommate = document.createElement("span");
+    roommate.innerHTML = " - ";
+
     for(var i = 0; i < list.length; i++){
-      var roommate = document.createElement("span");
       roommate.classList="roommate";
-      roommate.innerHTML = " - " + list[i]
+      roommate.innerHTML += list[i]
       chore.appendChild(roommate);
       if(i != list.length - 1) {
-        chore.innerHTML += ", ";
+        roommate.innerHTML += ", ";
       }
     }
+
     line.appendChild(chore);
+
+    var del = document.createElement("input");
+      del.setAttribute("type", "button");
+      del.setAttribute("class", "delete");
+      del.setAttribute("value", "Delete");
+      del.setAttribute("onclick", "deleteFunction(this)");
 
     var etc = document.createElement("div");
     etc.className += "ruleDescription";
@@ -109,7 +118,7 @@ function addChore() {
 
 
     chore.appendChild(remind);
-
+    etc.appendChild(del);
     line.appendChild(etc);
 
     chore.setAttribute("onclick","toggleDropdown(this)");
@@ -137,49 +146,33 @@ function add(el) {
   closeModal();
 }
 
-function toggleDropdown(el) {
-  el.classList.toggle("active");
-    var content = el.nextElementSibling;
-    if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-}
-
-function tempAlert(msg,duration)
-{
- var el = document.createElement("div");
- el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
- el.innerHTML = msg;
- setTimeout(function(){
-  el.parentNode.removeChild(el);
- },duration);
- document.body.appendChild(el);
+function deleteFunction(el) {
+  var del = window.confirm("Are you sure you want to delete this chore? This cannot be undone.");
+  if(del)
+    button = el.parentNode.parentNode.getElementsByClassName("remind");
+    deleteChore(button[0]);
 }
 
 function deleteChore(el) {
   var chores = JSON.parse(localStorage.getItem("chores"));
-  var title = el.previousSibling.previousSibling.wholeText;
-  var index = chores.indexOf(title);
-  chores.splice(index, 2);
-  localStorage.setItem('chores', JSON.stringify(chores));
+  if(chores){
+    var title = el.previousSibling.previousSibling.wholeText;
+    var index = chores.indexOf(title);
+    if(index != -1)
+      chores.splice(index, 2);
 
-  el.parentNode.parentNode.removeChild(el.parentNode);
+    localStorage.setItem('chores', JSON.stringify(chores));
+  }
+
+  el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
 }
 
-//close popup when x is clicked
-$('.closeAlert').click(function(){
-    setTimeout(function(){
-      $('.reminderSent').css('animation', 'none');
-		  $('.reminderSent').css('display', 'none');
-    }, 100);
-});
-
+//show dropdown to select Chore day
 function show() {
   document.getElementById("myDropdown").style.display="block";
 }
 
+//filter for day selection
 function filterFunction() {
   var input, filter, ul, li, a, i, p;
   input = document.getElementById("choreDay");
@@ -196,6 +189,7 @@ function filterFunction() {
   }
 }
 
+//set value on click
 function clickday(el) {
   input = document.getElementById("choreDay");
   input.value = el.innerHTML;

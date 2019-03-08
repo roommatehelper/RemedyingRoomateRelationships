@@ -31,6 +31,16 @@ $(document).ready(function () {
     });
 });
 
+//sign in/up functions
+function signIn(form) {
+  var signInEls = document.getElementsByClassName("signInInput");
+  if(signInEls[0].value.toLowerCase() == "daniella@gmail.com")
+    form.action = "dashboard2.html";
+  else {
+    form.action = "dashboard.html"
+  }
+}
+
 function checkPassword() {
     var password = document.getElementById("p1");
     var secondPassword = document.getElementById("p2");
@@ -49,15 +59,11 @@ function checkPassword() {
     }
 }
 
-function signIn(form) {
-  var signInEls = document.getElementsByClassName("signInInput");
-  if(signInEls[0].value.toLowerCase() == "daniella@gmail.com")
-    form.action = "dashboard2.html";
-  else {
-    form.action = "dashboard.html"
-  }
+function changeWindow() {
+  window.location = "dashboard.html";
 }
 
+//for rules/chores/payments
 function toggleDropdown(el) {
   el.classList.toggle("active");
     var content = el.nextElementSibling;
@@ -66,7 +72,4 @@ function toggleDropdown(el) {
       } else {
         content.style.display = "block";
       }
-}
-function changeWindow() {
-  window.location = "dashboard.html";
 }

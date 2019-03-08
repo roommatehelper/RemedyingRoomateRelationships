@@ -49,7 +49,7 @@
             <input type="button" class="descButton remind" id="remindButton" value="Remind"/></button>
               <div class="ruleDescription">
                 <p>Details: Give at least a few hours' notice if you need to have someone over!</p>
-                <input type="button" class="descButton delete" value="Delete" onclick="deleteRule(this)"/>
+                <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
               </div>
           </div>
           <div class="line">
@@ -58,7 +58,7 @@
             <input type="button" class="descButton remind" id="remindButton2" value="Remind"/></button>
             <div class="ruleDescription">
             <p>Don't be too loud after 12!</p>
-            <input type="button" class="descButton delete" value="Delete" onclick="deleteRule(this)"/>
+            <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
           </div>
           </div>
         </div>
@@ -75,32 +75,15 @@
   </section>
 
   <div class="registrationForm">
-    <form class="multiPageForm modal" id="newRuleForm">
+    <form class="multiPageForm modal" id="newItemForm">
       <fieldset id= "start">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
-          <li>Roommate Agreement</li>
         </ul>
         <h2 class="formTitle">A Brief Description</h2>
         <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
-        <textarea name="details" placeholder="Details" required></textarea>
-        <input type="button" class="formButton forward" value="Next"/>
-      </fieldset>
-
-      <fieldset class="end">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <ul id="progressbar">
-          <li class="active">Rule Description</li>
-          <li class="active">Roommate Agreement</li>
-        </ul>
-        <h2 class="formTitle">Who Agrees?</h2>
-        <h4 class="subtitle">All selected roommates will be notified about the new rule.</h4>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
-        <input type="button" class="formButton previous" value="Previous"/>
+        <textarea name="details" placeholder="Details (optional)"></textarea>
         <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
       </fieldset>
     </form>

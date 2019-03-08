@@ -50,6 +50,7 @@
               <div class="ruleDescription">
                 <p>$150.00 <br><br>
                   Daniella, David, and Rabin owe you $30.00</p>
+                  <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
               </div>
           </div>
           <div class="line">
@@ -61,6 +62,7 @@
                 <p>
                   Details: From Ikea!
                 </p>
+                <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
           </div>
           </div>
         </div>
@@ -77,7 +79,7 @@
   </section>
 
   <div class="registrationForm">
-    <form class="multiPageForm modal" id="newPaymentForm">
+    <form class="multiPageForm modal" id="newItemForm">
       <fieldset id= "start">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">

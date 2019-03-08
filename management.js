@@ -33,6 +33,14 @@ function addMember() {
 
 }
 
+function leave(el) {
+  var leave = window.confirm("Are you sure you want to leave this room? You will have to be reinvited or sign up with the room code to join again.");
+  if(leave) {
+    removeMember(el);
+    window.location = "index.html";
+  }
+}
+
 function removeMember(el) {
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
 }
