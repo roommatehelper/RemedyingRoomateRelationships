@@ -64,7 +64,7 @@ function addRule() {
     }
 
     etc.appendChild(del);
-    etc.appendChild(remind);
+    rule.appendChild(remind);
 
     line.appendChild(etc);
 

@@ -62,7 +62,7 @@ function addChore() {
     var chore = document.createElement("button");
     chore.className += "ruleTitle";
     chore.type = "button";
-    chore.innerHTML += obj["description"] + " - ";
+    chore.innerHTML += obj["description"];
     var list = [];
     var inputElements = document.getElementsByClassName("checklist");
     for(var i=0; inputElements[i]; i++){
@@ -73,7 +73,7 @@ function addChore() {
     for(var i = 0; i < list.length; i++){
       var roommate = document.createElement("span");
       roommate.classList="roommate";
-      roommate.innerHTML = list[i]
+      roommate.innerHTML = " - " + list[i]
       chore.appendChild(roommate);
       if(i != list.length - 1) {
         chore.innerHTML += ", ";
@@ -108,7 +108,7 @@ function addChore() {
     }
 
 
-    etc.appendChild(remind);
+    chore.appendChild(remind);
 
     line.appendChild(etc);
 
@@ -160,12 +160,12 @@ function tempAlert(msg,duration)
 
 function deleteChore(el) {
   var chores = JSON.parse(localStorage.getItem("chores"));
-  var title = el.parentNode.previousSibling.innerHTML;
+  var title = el.previousSibling.previousSibling.wholeText;
   var index = chores.indexOf(title);
   chores.splice(index, 2);
   localStorage.setItem('chores', JSON.stringify(chores));
 
-  el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+  el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
 //close popup when x is clicked

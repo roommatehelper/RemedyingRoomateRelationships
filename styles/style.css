@@ -265,17 +265,17 @@ div.headernav {
   float: right;
 }
 
-.descButton.remind, .descButton.done {
+.descButton.remind, .descButton.done, .descButton.complete {
   float: right;
   margin-top: 0;
-  margin-right: 2%;
+  margin-left: 20px;
 }
 
 .formButton.previous {
   float: left;
 }
 
-.descButton.delete, .descButton.complete {
+.descButton.delete,  {
   float: left;
   margin-top: 0;
   margin-left: 2%;
@@ -540,17 +540,6 @@ button.ruleTitle.active, button.ruleTitle:hover {
   background-color: #f1f1f1;
 }
 
-button.ruleTitle:after {
-  content: '\22EF';
-  font-size: 20px;
-  float: right;
-  margin-left: 5px;
-}
-
-button.active:after {
-  content: "\2796";
-}
-
 .listwrap {
 	padding-top: 1%;
 	margin: 5%;
@@ -629,7 +618,8 @@ input#hcb_form_name {
   text-align: left;
 }
 
-.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar, #hcb_form div a, #hcb-comment-tb {display: none;}
+.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar,
+#hcb_form div a, .comment .hcb-comment-tb, input#hcb_form_name {display: none !important;}
 
 #profile {
   display: none;

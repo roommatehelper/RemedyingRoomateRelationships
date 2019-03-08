@@ -114,8 +114,8 @@ function addPayment() {
     etc.appendChild(details);
   }
 
-  etc.appendChild(del);
-  etc.appendChild(remind);
+  payment.appendChild(remind);
+  payment.appendChild(del);
   line.appendChild(payment);
   line.appendChild(etc);
 
