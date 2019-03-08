@@ -27,8 +27,6 @@ function addMember() {
 
   line.appendChild(etc);
 
-  rule.setAttribute("onclick","toggleDropdown(this)");
-
   add(line);
 
 }
@@ -52,16 +50,6 @@ function add(el) {
   window.location.hash = "#";
 
   closeModal();
-}
-
-function toggleDropdown(el) {
-  el.classList.toggle("active");
-    var content = el.nextElementSibling;
-    if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
 }
 
 function openModal() {

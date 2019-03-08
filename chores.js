@@ -121,8 +121,6 @@ function addChore() {
     etc.appendChild(del);
     line.appendChild(etc);
 
-    chore.setAttribute("onclick","toggleDropdown(this)");
-
     add(line);
 
     var chores = JSON.parse(localStorage.getItem('chores'));

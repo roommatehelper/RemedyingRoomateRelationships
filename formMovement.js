@@ -64,12 +64,16 @@ function changeWindow() {
 }
 
 //for rules/chores/payments
-function toggleDropdown(el) {
-  el.classList.toggle("active");
+$(".ruleTitle").on('click', function(e){
+  var el = e.target;
+  if(el.tagName === "BUTTON"){
+    el.classList.toggle("active");
     var content = el.nextElementSibling;
     if (content.style.display === "block") {
         content.style.display = "none";
       } else {
         content.style.display = "block";
       }
-}
+
+  }
+})

@@ -66,8 +66,6 @@ function addRule() {
 
     line.appendChild(etc);
 
-    rule.setAttribute("onclick","toggleDropdown(this)");
-
     add(line);
 
     var rules = JSON.parse(localStorage.getItem('rules'));

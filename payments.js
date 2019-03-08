@@ -126,8 +126,6 @@ function addPayment() {
   line.appendChild(payment);
   line.appendChild(etc);
 
-  payment.setAttribute("onclick","toggleDropdown(this)");
-
   add(line);
 
   var payments = JSON.parse(localStorage.getItem('payments'));
