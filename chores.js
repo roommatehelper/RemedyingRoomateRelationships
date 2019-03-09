@@ -13,11 +13,12 @@ function restoreChores() {
       add(chore);
       var responsible = false;
 
-      var elements = chore.getElementsByClassName("roommate");
+      var text = chore.getElementsByClassName("roommate")[0].innerHTML;
+      var elements = text.split(" ");
       var button = chore.getElementsByClassName("descButton")[0];
 
       for(var j = 0; j < elements.length; j++) {
-        if (!responsible && elements[j].innerHTML == acc.innerHTML) {
+        if (!responsible && elements[j] == acc.innerHTML) {
           responsible = true;
           button.setAttribute("class", "descButton done");
           button.setAttribute("value", "Done");
@@ -83,9 +84,9 @@ function addChore() {
 
     var roommate = document.createElement("span");
     roommate.innerHTML = " - ";
+    roommate.classList="roommate";
 
     for(var i = 0; i < list.length; i++){
-      roommate.classList="roommate";
       roommate.innerHTML += list[i]
       chore.appendChild(roommate);
       if(i != list.length - 1) {
