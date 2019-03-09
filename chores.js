@@ -49,6 +49,17 @@ function closeModal() {
   document.getElementById("newItemForm").reset();
 }
 
+//show dropdown to select Chore day
+$("#choreDay").on('click', function() {
+  document.getElementById("myDropdown").style.display="block";
+});
+
+$("#choreDay").parent().on('click', function(e) {
+  var target = e.target;
+  if((target.id !== "choreDay") && (target.classList !== "searchList"))
+    document.getElementById("myDropdown").style.display="none";
+});
+
 function addChore() {
     var elements = document.getElementById("newItemForm").elements;
     var obj ={};
@@ -163,11 +174,6 @@ function deleteChore(el) {
   }
 
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
-}
-
-//show dropdown to select Chore day
-function show() {
-  document.getElementById("myDropdown").style.display="block";
 }
 
 //filter for day selection

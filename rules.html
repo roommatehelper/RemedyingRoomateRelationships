@@ -77,31 +77,28 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
-          <li>Roommate Agreement</li>
+          <li>Confirmation</li>
         </ul>
         <h2 class="formTitle">A Brief Description</h2>
         <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
         <textarea name="details" placeholder="Details (optional)"></textarea>
-        <input type="button" class="formButton forward" value="Next"/>
+        <input type="button" class="formButton forward" value="Next" />
       </fieldset>
 
-      <fieldset class="end">
+      <fieldset class= "end">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Rule Description</li>
-          <li class="active">Roommate Agreement</li>
+          <li class="active">Confirmation</li>
         </ul>
-        <h2 class="formTitle">Who Agrees?</h2>
-        <h4 class="subtitle">All selected roommates will be notified about the new rule.</h4>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
+        <h2 class="formTitle">Confirmation</h2>
+        <p class="subtitle">All of your roommates will be notified about the new rule.</p>
         <input type="button" class="formButton previous" value="Previous"/>
         <input type="button" class="formButton submit" value="Submit" onclick="addRule()"/>
       </fieldset>
     </form>
   </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
   <script src="rules.js"></script>

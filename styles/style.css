@@ -386,11 +386,11 @@ input:active {
 	border: 1px solid rgb(172, 172, 172);
 }
 
-input.error, textarea.error {
+input.error {
   border: 1px solid red;
 }
 
-input.error::placeholder, textarea.error::placeholder {
+input.error::placeholder, textarea.error::placeholder, #listError {
   color: red;
   font-style: italic;
 }
@@ -504,6 +504,7 @@ input[type=checkbox]
 	width: 80%;
 	margin: 5% auto;
 	text-align: left;
+  display: flex;
 }
 .checkitem p{
 	padding-left: 10px;

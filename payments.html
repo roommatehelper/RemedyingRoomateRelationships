@@ -83,6 +83,7 @@
         <ul id="progressbar">
           <li class="active">Payment Description</li>
           <li>Roommate Selection</li>
+          <li>Confirmation</li>
         </ul>
         <h2 class="formTitle">Title</h2>
         <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z0-9].*"/>
@@ -97,11 +98,25 @@
         <ul id="progressbar">
           <li class="active">Payment Description</li>
           <li class="active">Roommate Selection</li>
+          <li>Confirmation</li>
         </ul>
-        <h2 class="formTitle">Split Cost With...</h2>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
+        <h2 class="formTitle" id="checklistTitle">Split Cost With...</h2>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div></label>
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton forward" value="Next"/>
+      </fieldset>
+
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <ul id="progressbar">
+          <li class="active">Payment Description</li>
+          <li class="active">Roommate Selection</li>
+          <li class="active">Confirmation</li>
+        </ul>
+        <h2 class="formTitle">Confirmation</h2>
+        <p class="subtitle">All selected roommates will be notified about this payment.</p>
         <input type="button" class="formButton previous" value="Previous" />
         <input type="button" class="formButton submit" value="Submit" onclick="addPayment()"/>
       </fieldset>

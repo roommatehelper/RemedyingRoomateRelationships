@@ -98,10 +98,23 @@
           <li class="active">Payment Description</li>
           <li class="active">Roommate Selection</li>
         </ul>
-        <h2 class="formTitle">Split Cost With...</h2>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>TK</p></div>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
-        <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
+        <h2 class="formTitle" id="checklistTitle">Split Cost With...</h2>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>TK</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div></label>
+        <input type="button" class="formButton previous" value="Previous" />
+        <input type="button" class="formButton forward" value="Next"/>
+      </fieldset>
+
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <ul id="progressbar">
+          <li class="active">Payment Description</li>
+          <li class="active">Roommate Selection</li>
+          <li class="active">Confirmation</li>
+        </ul>
+        <h2 class="formTitle">Confirmation</h2>
+        <p class="subtitle">All selected roommates will be notified about this payment.</p>
         <input type="button" class="formButton previous" value="Previous" />
         <input type="button" class="formButton submit" value="Submit" onclick="addPayment()"/>
       </fieldset>

@@ -2,26 +2,73 @@ $(document).ready(function () {
     var current, next, prev;
 
     $(".forward").click(function () {
-        current = $(this).parent();
-        next = $(this).parent().next();
-        var valid = true;
+            current = $(this).parent();
+            next = $(this).parent().next();
+            var valid = true;
 
-        //if all fields are valid, continue, else error
-        var fields = current.children();
-        for (var i = 0; i < fields.length; i++) {
-          if(fields[i].localName == "input" && fields[i].type != "button" || fields[i].type == "textarea")
-            if(!fields[i].checkValidity()) {
-              valid = false;
-              fields[i].classList.add("error");
+            //if all fields are valid, continue, else error
+            var fields = current.find("input");
+            var checklist = false;
+            var checked = false;
+
+            for (var i = 0; i < fields.length; i++) {
+              var input = fields[i];
+              if((input.type !== "button") && (input.type !== "checkbox") && input.id !== "choreDay") {
+                if(!input.checkValidity()) {
+                  valid = false;
+                  input.classList.add("error");
+                }
+                else
+                  input.classList.remove("error");
             }
-            else
-              fields[i].classList.remove("error");
-        }
-        if(valid) {
-          next.show();
-          current.hide();
-        }
-    });
+
+            else if(input.type === "checkbox") {
+              checklist = true;
+              if(input.checked)
+                  checked = true;
+            }
+
+            else if(input.id === "choreDay"){
+              var days = document.getElementsByClassName("searchList");
+              var found = false;
+              for(var i = 0; i < days.length; i++) {
+                if(input.value === days[i].innerText) {
+                  found = true;
+                }
+              }
+              if(!found) {
+                valid = false;
+                input.classList.add("error");
+              }
+              else {
+                input.classList.remove("error");
+              }
+            }
+          }
+
+          if(checklist) {
+            var listError = document.getElementById("listError");
+            if(!checked) {
+              valid = false;
+              if(!listError) {
+                listError = document.createElement("p");
+                listError.setAttribute("id", "listError");
+                listError.classList = "subtitle error";
+                listError.innerHTML = "Please select at least one name.";
+                $("#checklistTitle").after(listError);
+              }
+            }
+            else if(listError){
+              listError.parentNode.removeChild(listError);
+            }
+          }
+
+          if(valid) {
+            next.show();
+            current.hide();
+
+          }
+        });
 
     $(".previous").click(function () {
         current = $(this).parent();
@@ -64,7 +111,7 @@ function changeWindow() {
 }
 
 //for rules/chores/payments
-$(".ruleTitle").on('click', function(e){
+$(document).on('click', function(e){
   var el = e.target;
   if(el.tagName === "BUTTON"){
     el.classList.toggle("active");
