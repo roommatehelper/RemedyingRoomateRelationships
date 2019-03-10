@@ -81,7 +81,10 @@ header a {
 	align-self: center;
 	width: 35%;
 	height: 35%;
-	transition: background .4s ease-in-out;
+}
+
+header a:hover {
+  color: rgb(92,92,92);
 }
 
 .title {
@@ -128,7 +131,6 @@ div.headernav {
 	cursor:pointer;
 	overflow: hidden;
 	outline:none;
-	margin-bottom: 3%;
 	margin-right: 5%;
 }
 
@@ -508,6 +510,10 @@ input[type=checkbox]
 }
 .checkitem p{
 	padding-left: 10px;
+}
+
+.change {
+  font-size: smaller;
 }
 
 /*** rules/chores/payments overview ***/
