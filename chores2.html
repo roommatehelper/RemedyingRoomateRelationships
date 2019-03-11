@@ -43,19 +43,19 @@
     <div class="infoList">
         <div class="list">
           <div class="line">
-            <button class= "ruleTitle" id = "titleForSum" type="button"
-            onclick="toggleDropdown(this)">Take out the trash - TK</button>
+            <button class= "ruleTitle" id = "titleForSum" type="button">Take out the trash<span class="roommate"> - TK</span>
+            <input type="button" class="descButton remind" value="Remind"/></button>
               <div class="ruleDescription">
                 <p>Sunday</p>
-                <input type="button" class="descButton remind" value="Remind"/>
+                <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
               </div>
           </div>
           <div class="line">
-            <button class= "ruleTitle" type="button"
-            onclick="toggleDropdown(this)">Clean the Kitchen - Rabin</button>
+            <button class= "ruleTitle" type="button">Clean the Kitchen<span class="roommate"> - Rabin</span>
+            <input type="button" class="descButton remind" value="Remind"/></button>
             <div class="ruleDescription">
-            <p>Monday</p>
-            <input type="button" class="descButton remind" value="Remind"/>
+              <p>Monday</p>
+              <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
           </div>
           </div>
         </div>
@@ -72,29 +72,17 @@
   </section>
 
   <div class="registrationForm">
-    <form class="multiPageForm modal" id="newChoreForm">
+    <form class="multiPageForm modal" id="newItemForm">
       <fieldset id= "start">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Chore Description</li>
-          <li>Chore Schedule</li>
-          <li>Chore Assignment</li>
+          <li>Roommate Selection</li>
+          <li>Confirmation</li>
         </ul>
         <h2 class="formTitle">A Brief Description</h2>
-        <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z].*"/>
-        <textarea name="details" placeholder="Details (optional)"></textarea>
-        <input type="button" class="formButton forward" value="Next"/>
-      </fieldset>
-
-      <fieldset class="end">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <ul id="progressbar">
-          <li class="active">Chore Description</li>
-          <li class="active">Chore Schedule</li>
-          <li>Chore Assignment</li>
-        </ul>
-        <h2 class="formTitle">Day of the Week</h2>
-        <input name="day" type="text" placeholder="Type day..." id="choreDay" onclick="show()" onkeyup="filterFunction()">
+        <input type="text" class="description" name="description" placeholder="DESCRIPTION" required pattern="[A-Za-z0-9].*"/>
+        <input name="day" type="text" placeholder="Type day..." id="choreDay" onkeyup="filterFunction()" required>
         <div id="myDropdown" class="dropdown-content">
             <div class="searchList" onclick="clickday(this)">Monday</div>
             <div class="searchList" onclick="clickday(this)">Tuesday</div>
@@ -104,24 +92,36 @@
             <div class="searchList" onclick="clickday(this)">Saturday</div>
             <div class="searchList" onclick="clickday(this)">Sunday</div>
         </div>
-        <div class="checkitem"><input type="checkbox" name="alternates" value="Rotate"><p>Rotate Weekly?</p></div>
-        <input type="button" class="formButton previous" value="Previous" />
-        <input type="button" class="formButton forward" value="Next" />
+        <textarea name="details" placeholder="Details (optional)"></textarea>
+        <input type="button" class="formButton forward" value="Next"/>
       </fieldset>
 
       <fieldset class="end">
         <span class="close" onclick="closeModal()">&times;</span>
         <ul id="progressbar">
           <li class="active">Chore Description</li>
-          <li class="active">Chore Schedule</li>
-          <li class="active">Chore Assignment</li>
+          <li class="active">Roommate Selection</li>
+          <li>Confirmation</li>
         </ul>
-        <h2 class="formTitle">Who's Responsible?</h2>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div>
-          <div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div>
+        <h2 class="formTitle" id="checklistTitle">Who's Responsible?</h2>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="TK" value="TK"><p>T.K.</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="David" value="David"><p>David</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="Rabin" value="Rabin"><p>Rabin</p></div></label>
+        <label><div class="checkitem"><input type="checkbox" class="checklist" name="Daniella" value="Daniella"><p>Daniella</p></div></label>
         <input type="button" class="formButton previous" value="Previous"/>
+        <input type="button" class="formButton forward" value="Next" />
+      </fieldset>
+
+      <fieldset class="end">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <ul id="progressbar">
+          <li class="active">Payment Description</li>
+          <li class="active">Roommate Selection</li>
+          <li class="active">Confirmation</li>
+        </ul>
+        <h2 class="formTitle">Confirmation</h2>
+        <p class="subtitle">All selected roommates will be notified about their new chore.</p>
+        <input type="button" class="formButton previous" value="Previous" />
         <input type="button" class="formButton submit" value="Submit" onclick="addChore()"/>
       </fieldset>
     </form>

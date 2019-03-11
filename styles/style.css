@@ -61,10 +61,6 @@ body {
   display: inline;
 }
 
-body {
-  font-family: Montserrat, sans-serif;
-}
-
 /* header */
 header {
   width: 100%;
@@ -85,7 +81,10 @@ header a {
 	align-self: center;
 	width: 35%;
 	height: 35%;
-	transition: background .4s ease-in-out;
+}
+
+header a:hover {
+  color: rgb(92,92,92);
 }
 
 .title {
@@ -132,7 +131,6 @@ div.headernav {
 	cursor:pointer;
 	overflow: hidden;
 	outline:none;
-	margin-bottom: 3%;
 	margin-right: 5%;
 }
 
@@ -265,20 +263,15 @@ div.headernav {
   float: right;
 }
 
-.descButton.remind, .descButton.done {
+.descButton.remind, .descButton.done, .descButton.complete {
   float: right;
   margin-top: 0;
-  margin-right: 2%;
+  margin-bottom: 0;
+  margin-left: 20px;
 }
 
 .formButton.previous {
   float: left;
-}
-
-.descButton.delete, .descButton.complete {
-  float: left;
-  margin-top: 0;
-  margin-left: 2%;
 }
 
 .formButton.submit {
@@ -296,9 +289,6 @@ div.headernav {
 .descButton {
   box-shadow: none;
 }
-.descButton.delete {
-  background: #CD2626;
-}
 
 .descButton.complete {
   background: #0000de;
@@ -315,16 +305,31 @@ div.headernav {
 	background: rgb(82, 223, 82);
 }
 
-.descButton.delete:hover {
-	background: firebrick;
-}
-
 .descButton.complete:hover {
   background: #000894;
 }
 
 .descButton.done:hover {
 	background: rgb(82, 223, 82);
+}
+
+input.delete {
+    border: none;
+    background: none;
+    float: left;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 2%;
+    color: firebrick;
+    width: 5%;
+    text-decoration: underline;
+    text-align: left;
+    cursor: pointer;
+}
+
+input.delete:active, input.delete:focus {
+    outline: none;
+    border: none;
 }
 
 .registrationForm fieldset {
@@ -383,11 +388,11 @@ input:active {
 	border: 1px solid rgb(172, 172, 172);
 }
 
-input.error, textarea.error {
+input.error {
   border: 1px solid red;
 }
 
-input.error::placeholder, textarea.error::placeholder {
+input.error::placeholder, textarea.error::placeholder, #listError {
   color: red;
   font-style: italic;
 }
@@ -501,9 +506,14 @@ input[type=checkbox]
 	width: 80%;
 	margin: 5% auto;
 	text-align: left;
+  display: flex;
 }
 .checkitem p{
 	padding-left: 10px;
+}
+
+.change {
+  font-size: smaller;
 }
 
 /*** rules/chores/payments overview ***/
@@ -519,8 +529,9 @@ input[type=checkbox]
     display: block;
 }
 
+.ruleTitle {cursor: pointer;}
 .ruleTitle, .roomTitle {
-  cursor: pointer;
+  font-family: Montserrat, sans-serif;
   width: 100%;
   border: none;
   outline: none;
@@ -528,6 +539,7 @@ input[type=checkbox]
 	padding: 20px;
 	text-align: left;
 	font-size: 14pt;
+  overflow-wrap: break-word;
 }
 
 button.ruleTitle.active, button.ruleTitle:hover {
@@ -538,17 +550,6 @@ button.ruleTitle.active, button.ruleTitle:hover {
 	display: none;
   overflow: hidden;
   background-color: #f1f1f1;
-}
-
-button.ruleTitle:after {
-  content: '\22EF';
-  font-size: 20px;
-  float: right;
-  margin-left: 5px;
-}
-
-button.active:after {
-  content: "\2796";
 }
 
 .listwrap {
@@ -629,7 +630,30 @@ input#hcb_form_name {
   text-align: left;
 }
 
-.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar, #hcb_form div a, #hcb-comment-tb {display: none;}
+#hcb_submit.submit.btn {
+    width: 100px;
+    height: 50px;
+    background: rgb(92, 92, 92);
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#hcb_submit.submit.btn:hover {
+  background-color: #2f2f2f;
+  transition: background .4s ease-in-out
+  color: white;
+}
+
+#HCB_comment_box p {
+    border: none;
+}
+
+.home-desc, #hcb_msg, #HCB_comment_box a, #HCB_comment_box .gravatar,
+#hcb_form div a, .comment .hcb-comment-tb, input#hcb_form_name {display: none !important;}
 
 #profile {
   display: none;

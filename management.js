@@ -27,10 +27,16 @@ function addMember() {
 
   line.appendChild(etc);
 
-  rule.setAttribute("onclick","toggleDropdown(this)");
-
   add(line);
 
+}
+
+function leave(el) {
+  var leave = window.confirm("Are you sure you want to leave this room? You will have to be reinvited or sign up with the room code to join again.");
+  if(leave) {
+    removeMember(el);
+    window.location = "index.html";
+  }
 }
 
 function removeMember(el) {
@@ -44,16 +50,6 @@ function add(el) {
   window.location.hash = "#";
 
   closeModal();
-}
-
-function toggleDropdown(el) {
-  el.classList.toggle("active");
-    var content = el.nextElementSibling;
-    if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
 }
 
 function openModal() {

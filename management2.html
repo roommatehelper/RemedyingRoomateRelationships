@@ -41,24 +41,23 @@
         <div class="infoList">
             <div class="list">
               <div class="line">
-                <button class= "ruleTitle" type="button"
-                onclick="toggleDropdown(this)">Daniella</button>
+                <button class= "ruleTitle" type="button">Daniella
+                <a href="myAccount2.html">
+                <input type="button" class="descButton remind" value="Edit"/>
+              </a></button>
                   <div class="ruleDescription">
                     <p>Joined: 02/12/2019</p>
-                    <input type="button" class="descButton delete" value="Leave"/>
-                    <a href="myAccount2.html">
-                    <input type="button" class="descButton remind" value="Edit"/>
-                  </a>
+                    <input type="button" class="delete" value="Leave" onclick="leave(this)"/>
                   </div>
               </div>
               <div class="line">
-                <div class= "ruleTitle">TK</div>
+                <div class= "roomTitle">TK</div>
               </div>
               <div class="line">
-                <div class= "ruleTitle">David</div>
+                <div class= "roomTitle">David</div>
               </div>
               <div class="line">
-                <div class="ruleTitle">Rabin</div>
+                <div class="roomTitle">Rabin</div>
               </div>
               </div>
             <input type="button" class="formButton add" value="Add" onclick="openModal()"/>

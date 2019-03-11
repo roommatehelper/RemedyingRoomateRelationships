@@ -1,5 +1,3 @@
-var acc = "a";
-
 window.addEventListener('DOMContentLoaded',
   restoreRules()
 );
@@ -26,11 +24,11 @@ function closeModal() {
     end[i].style.display = "none";
 
   document.getElementsByClassName("modal")[0].style.display = "none";
-  document.getElementById("newRuleForm").reset();
+  document.getElementById("newItemForm").reset();
 }
 
 function addRule() {
-    var elements = document.getElementById("newRuleForm").elements;
+    var elements = document.getElementById("newItemForm").elements;
     var obj ={};
     for(var i = 0 ; i < elements.length ; i++){
         var item = elements.item(i);
@@ -50,9 +48,9 @@ function addRule() {
     var details = document.createElement("p");
     var del = document.createElement("input");
       del.setAttribute("type", "button");
-      del.setAttribute("class", "descButton delete");
+      del.setAttribute("class", "delete");
       del.setAttribute("value", "Delete");
-      del.setAttribute("onclick", "deleteRule(this)");
+      del.setAttribute("onclick", "deleteFunction(this)");
     var remind = document.createElement("input");
       remind.setAttribute("type", "button");
       remind.setAttribute("class", "descButton remind");
@@ -64,11 +62,9 @@ function addRule() {
     }
 
     etc.appendChild(del);
-    etc.appendChild(remind);
+    rule.appendChild(remind);
 
     line.appendChild(etc);
-
-    rule.setAttribute("onclick","toggleDropdown(this)");
 
     add(line);
 
@@ -93,23 +89,25 @@ function add(el) {
   closeModal();
 }
 
-function tempAlert(msg,duration)
-{
- var el = document.createElement("div");
- el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
- el.innerHTML = msg;
- setTimeout(function(){
-  el.parentNode.removeChild(el);
- },duration);
- document.body.appendChild(el);
+function deleteFunction(el) {
+  var del = window.confirm("Are you sure you want to delete this rule? This cannot be undone.");
+  if(del)
+    deleteRule(el);
 }
 
 function deleteRule(el) {
   var rules = JSON.parse(localStorage.getItem("rules"));
-  var title = el.parentNode.previousSibling.innerHTML;
-  var index = rules.indexOf(title);
-  rules.splice(index, 2);
-  localStorage.setItem('rules', JSON.stringify(rules));
+
+  if(rules) {
+    var title = el.parentElement.parentElement.getElementsByClassName("ruleTitle")[0].innerText;
+    var index = rules.indexOf(title);
+
+    if(index != -1)
+      rules.splice(index, 2);
+
+    localStorage.setItem('rules', JSON.stringify(rules));
+  }
 
   el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+
 }
