@@ -14,11 +14,11 @@ function restoreChores() {
       var responsible = false;
 
       var text = chore.getElementsByClassName("roommate")[0].innerHTML;
-      var elements = text.split(" ");
+      var elements = text.split(/,| /);
       var button = chore.getElementsByClassName("descButton")[0];
 
       for(var j = 0; j < elements.length; j++) {
-        if (!responsible && elements[j] == acc.innerHTML) {
+        if (!responsible && (elements[j] == acc.innerHTML)) {
           responsible = true;
           button.setAttribute("class", "descButton done");
           button.setAttribute("value", "Done");
@@ -29,7 +29,7 @@ function restoreChores() {
       if(!responsible) {
         button.setAttribute("class", "descButton remind");
         button.setAttribute("value", "Remind");
-        button.setAttribute("onclick", "sendChoreReminder()");
+        button.setAttribute("onclick", "");
       }
     }
   }
@@ -72,7 +72,7 @@ function addChore() {
     var line = document.createElement("div");
     line.className += "line";
     var chore = document.createElement("button");
-    chore.className += "ruleTitle";
+    chore.className += "lineTitle";
     chore.type = "button";
     chore.innerHTML += obj["description"];
     var list = [];
@@ -103,7 +103,7 @@ function addChore() {
       del.setAttribute("onclick", "deleteFunction(this)");
 
     var etc = document.createElement("div");
-    etc.className += "ruleDescription";
+    etc.className += "lineDescription";
     var desc = document.createElement("p");
     var details = document.createElement("p");
 

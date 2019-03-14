@@ -20,20 +20,6 @@
       <h1> Payments </h1>
     </div>
     <div class="headernav account">
-      <button id="myBtn">
-        <i class="fas fa-info-circle" id="help"></i>
-      </button>
-      <div id="myModal" class="popupModal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h1>Functionality</h1>
-          <ul>
-            <li class="normalText">To add a purchase you would like to split with your roommate(s), hit the add button.</li>
-            <li class="normalText">To look at the details of a recent transaction, click on transaction (expand by hitting the three dots).</li>
-            <li class = "normalText">To pay for an item you split, hit the complete button. To remind your roomate(s) to pay you back, hit the remind button</li>
-          </ul>
-        </div>
-      </div>
       <a href="myAccount2.html">My Account</a>
       <a href="index.html">Log Out</a>
     </div>
@@ -43,18 +29,18 @@
     <div class="infoList">
         <div class="list">
           <div class="line">
-            <button class= "ruleTitle" type="button"><span class="title">Blender</span> - Purchased by TK
+            <button class= "lineTitle" type="button"><span class="title">Blender</span> - Purchased by TK
             <input type="button" class="descButton remind" id="remindButton4" value="Remind"/>
             <input type="button" class="descButton complete" value="Complete" onclick="deletePayment(this)"/></button>
-              <div class="ruleDescription">
+              <div class="lineDescription">
                 <p>$150.00 <br><br>
                   Daniella, David, and Rabin owe you $30.00</p>
                   <input type="button" class="delete" value="Delete" onclick="deleteFunction(this)"/>
               </div>
           </div>
           <div class="line">
-            <button class= "ruleTitle" type="button"><span class="title">Coffee Table</span> - Purchased by Daniella</button>
-            <div class="ruleDescription">
+            <button class= "lineTitle" type="button"><span class="title">Coffee Table</span> - Purchased by Daniella</button>
+            <div class="lineDescription">
               <p>$100.00 <br><br>
                 You owe Daniella $25.00</p>
                 <p>
@@ -70,10 +56,10 @@
 
   <section class="listwrap">
     <!-- begin wwww.htmlcommentbox.com -->
-    <div class="infoList" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
-    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-    <script type="text/javascript" id="hcb"> if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24ir7VqEa89iHjhLOQ2WMcq0"+"&opts=16862&num=10&ts=1551911119499");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); </script>
-    <!-- end www.htmlcommentbox.com -->
+ <div class="infoList" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+ <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16710&num=10&ts=1552573612786");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end www.htmlcommentbox.com -->
   </section>
 
   <div class="registrationForm">
@@ -125,7 +111,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
   <script src="payments.js"></script>
-  <script src="help.js"></script>
+  
   <script src="comments.js"></script>
   <script src="edit.js"></script>
 </body>

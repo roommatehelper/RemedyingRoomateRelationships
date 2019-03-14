@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title> My Room </title>
+  <title> Room Details </title>
 <link rel="stylesheet" href="styles/style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -14,23 +14,9 @@
       Dashboard </p></a>
     </div>
     <div class="title">
-    <h1> My Room </h1>
+    <h1> Room Details </h1>
   </div>
   <div class = "headernav account">
-    <button id="myBtn">
-        <i class="fas fa-info-circle" id="help"></i>
-      </button>
-      <div id="myModal" class="popupModal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h1>Functionality</h1>
-          <ul>
-            <li class="normalText">Click on the add button to add new roommates.</li>
-            <li class="normalText">To look at the details of current roommates, click on the particular roommate you are interested in (expand by hitting the three dots).</li>
-            <li class="normalText">To edit the details of your account such as your password, click your name and hit the edit button.</li>
-          </ul>
-        </div>
-      </div>
     <a href="myAccount.html">My Account</a>
     <a href="index.html">Log Out</a>
   </div>
@@ -41,23 +27,36 @@
       <div class="infoList">
           <div class="list">
             <div class="line">
-              <button class= "ruleTitle" type="button">TK
+              <button class= "lineTitle" type="button">TK
               <a href="myAccount.html">
               <input type="button" class="descButton remind" value="Edit"/>
             </a></button>
-                <div class="ruleDescription">
-                  <p>Joined: 02/12/2019</p>
+                <div class="lineDescription">
+                  <p>Payments:<br>You owe Daniella $25.00</p>
+                  <p>Chores:<br>Take out the trash by Sunday</p>
                   <input type="button" class="delete" value="Leave"/>
                 </div>
             </div>
             <div class="line">
-              <div class= "roomTitle">Daniella</div>
+              <button class= "lineTitle" type="button">Daniella</button>
+              <div class="lineDescription">
+                <p>Payments:<br>Daniella owes you $30.00</p>
+                <p>Chores:<br>No chores!</p>
+              </div>
             </div>
             <div class="line">
-              <div class= "roomTitle">David</div>
+              <button class= "lineTitle" type="button">David</button>
+              <div class="lineDescription">
+                <p>Payments:<br>David owes you $30.00</p>
+                <p>Chores:<br>No chores!</p>
+              </div>
             </div>
             <div class="line">
-              <div class="roomTitle">Rabin</div>
+              <button class= "lineTitle" type="button">Rabin</button>
+              <div class="lineDescription">
+                <p>Payments:<br>Rabin owes you $30.00</p>
+                <p>Chores:<br>Clean the kitchen by Monday</p>
+              </div>
             </div>
             </div>
           <input type="button" class="formButton add" value="Add" onclick="openModal()"/>
@@ -109,7 +108,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="formMovement.js"></script>
   <script src="management.js"></script>
-  <script src="help.js"></script>
+  
 
 </body>
 </html>

@@ -60,14 +60,14 @@ function addPayment() {
   var user = document.createElement("span");
   user.className = "user"
   user.innerHTML = acc.innerHTML;
-  payment.className += "ruleTitle";
+  payment.className += "lineTitle";
   payment.type = "button";
   payment.appendChild(title);
   payment.innerHTML += " - Purchased by ";
   payment.appendChild(user);
 
   var etc = document.createElement("div");
-  etc.className += "ruleDescription";
+  etc.className += "lineDescription";
   var price = document.createElement("p");
   var desc = document.createElement("span");
   desc.className = "payees";

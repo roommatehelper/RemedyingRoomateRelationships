@@ -38,13 +38,13 @@ function addRule() {
     var line = document.createElement("div");
     line.className += "line";
     var rule = document.createElement("button");
-    rule.className += "ruleTitle";
+    rule.className += "lineTitle";
     rule.type = "button";
     rule.innerHTML += obj["description"];
     line.appendChild(rule);
 
     var etc = document.createElement("div");
-    etc.className += "ruleDescription";
+    etc.className += "lineDescription";
     var details = document.createElement("p");
     var del = document.createElement("input");
       del.setAttribute("type", "button");
@@ -99,7 +99,7 @@ function deleteRule(el) {
   var rules = JSON.parse(localStorage.getItem("rules"));
 
   if(rules) {
-    var title = el.parentElement.parentElement.getElementsByClassName("ruleTitle")[0].innerText;
+    var title = el.parentElement.parentElement.getElementsByClassName("lineTitle")[0].innerText;
     var index = rules.indexOf(title);
 
     if(index != -1)
