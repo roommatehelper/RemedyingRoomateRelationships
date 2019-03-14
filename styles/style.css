@@ -199,7 +199,7 @@ header a:hover {
   float: right;
 }
 
-.descButton.remind, .descButton.done, .descButton.complete {
+.descButton.remind, .descButton.done, .descButton.complete, .descButton.edit {
   float: right;
   margin-top: 0;
   margin-bottom: 0;
