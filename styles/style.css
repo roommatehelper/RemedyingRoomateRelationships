@@ -442,6 +442,7 @@ input[type=checkbox]
 
 .change {
   font-size: smaller;
+  line-height: 18pt;
 }
 
 /* rules/chores/payments overview */
