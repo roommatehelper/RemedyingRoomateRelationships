@@ -360,7 +360,7 @@ input.delete:active, input.delete:focus {
 	position: relative;
 }
 
-input, textarea{
+input, textarea {
 	padding: 15px;
 	border: 1px solid rgb(172, 172, 172);
 	border-radius: 5px;
@@ -370,14 +370,6 @@ input, textarea{
 	color: #2C3E50;
 	font-size: 12px;
   resize: none;
-}
-
-input:invalid {
-  border: 1px dashed rgb(172, 172, 172);
-}
-
-input.signInInput:invalid {
-  border: none;
 }
 
 input.signInInput.error {
