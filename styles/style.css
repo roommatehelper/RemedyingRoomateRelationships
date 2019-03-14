@@ -119,50 +119,14 @@ div.headernav {
 .index .creation {
   padding-top: 10%;
 }
+
 #middle {
 	padding-bottom: 15%;
-}
-
-/* The Modal (background) */
-#myBtn {
-	background-color: Transparent;
-	background-repeat:no-repeat;
-	border: none;
-	cursor:pointer;
-	overflow: hidden;
-	outline:none;
-	margin-right: 5%;
-}
-
-/* Modal Content/Box */
-.modal-content {
-	background-color: #fffffff1;
-	color: rgb(83, 83, 83);
-	margin: auto; /* 15% from the top and centered */
-  padding: 20px;
-	width: 50%; /* Could be more or less, depending on screen size */
-	border: none;
-	border-radius: 5px;
 }
 
 #help {
 	font-size: 25px;
 	color: rgb(255, 255, 255);
-}
-
-/* The Close Button */
-.close {
-  color: rgb(255, 255, 255);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: rgba(0, 0, 0, 0);
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .normalText {
@@ -521,8 +485,8 @@ input[type=checkbox]
     display: block;
 }
 
-.ruleTitle {cursor: pointer;}
-.ruleTitle, .roomTitle {
+.lineTitle {cursor: pointer;}
+.lineTitle, .roomTitle {
   font-family: Montserrat, sans-serif;
   width: 100%;
   border: none;
@@ -534,11 +498,11 @@ input[type=checkbox]
   overflow-wrap: break-word;
 }
 
-button.ruleTitle.active, button.ruleTitle:hover {
+button.lineTitle.active, button.lineTitle:hover {
   background-color: #f1f1f1;
 }
 
-.ruleDescription{
+.lineDescription{
 	display: none;
   overflow: hidden;
   background-color: #f1f1f1;

@@ -8,12 +8,12 @@ function addMember() {
   var line = document.createElement("div");
   line.className += "line";
   var rule = document.createElement("button");
-  rule.className += "ruleTitle";
+  rule.className += "lineTitle";
   rule.type = "button";
   rule.innerHTML += obj["membername"];
   line.appendChild(rule);
   var etc = document.createElement("div");
-  etc.className += "ruleDescription";
+  etc.className += "lineDescription";
   var desc = document.createElement("p");
   var details = document.createElement("p");
   var del = document.createElement("input");

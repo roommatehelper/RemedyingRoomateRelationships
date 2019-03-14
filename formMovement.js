@@ -123,4 +123,7 @@ $(document).on('click', function(e){
       }
 
   }
+  if(el.classList.contains("remind")) {
+    alert("A reminder was sent!");
+  }
 })
